@@ -1,23 +1,13 @@
 ---
 import MySiteLayout from '../../../layouts/MySiteLayout.astro';
-//import Canvas from '../../../components/Canvas.svelte';
-//import Vehicles from '../../../components/Vehicles.astro';
-import Wrapper from '../../../components/threejs/Wrapper.svelte';
-//import VehiclesSSR from '../../../components/VehiclesSSR.astro';
-//import data from './source.json'
 
-//console.log(await protobufUpdate())
 
 ---
 
 <MySiteLayout>
     <div class="flex flex-col gap-2">
         <h1 class=" text-2xl font-bold grow-0 leading-relaxed">Sweden Population</h1>
-        <!--<Canvas client:only  population={data}/> -->
-        <!-- <Vehicles client:load /> -->
-        <!-- <VehiclesSSR /> -->
-        <!-- <Scene1 client:only /> -->
-        <Wrapper client:only />
+        
         <div class="inline-flex items-center gap-2 grow-0">
             <span class="text-sm font-bold">SCB</span>
             <a class="text-sm text-indigo-500" href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101E/FodelselandArK/">
