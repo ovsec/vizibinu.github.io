@@ -1,0 +1,50 @@
+---
+
+
+---
+
+<html>
+<script is:inline src="/gtfs-realtime.browser.proto.js"></script>
+<script>
+        import confetti from 'canvas-confetti';
+        import Pbf from 'pbf';
+        const operator = 'sl';
+        const apiKey = 'a937a2cbe88341048c7e4268cc25ad43';
+
+        const protobufUpdate = async () => {
+            // This is a reverse proxy to 
+            // https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb
+            const url =
+                `https://opendata.samtrafiken.se/gtfs-rt/${operator}/VehiclePositions.pb?key=${apiKey}`;
+            let response = await fetch(url);
+
+            if (response.ok) {
+                // if HTTP-status is 200-299
+                // get the response body (the method explained below)
+                const bufferRes = await response.arrayBuffer();
+                const pbf = new Pbf(new Uint8Array(bufferRes));
+                const obj = FeedMessage.read(pbf);
+                console.log(obj.entity)
+                let csvContent = '';
+                obj.entity.forEach(function(rowArray) {
+                    
+    
+        csvContent += `${rowArray.vehicle.position.latitude}, ${rowArray.vehicle.position.longitude}`  + "\r\n";
+    
+    console.log(csvContent) 
+});
+
+                return obj.entity;
+            } else {
+                console.error("error:", response.status);
+            }
+        };
+
+        //document.body.querySelector('button').addEventListener("click", () => protobufUpdate());
+    </script>
+<div>
+    Hello
+    <button>get Data</button>
+</div>
+
+</html>
