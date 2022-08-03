@@ -2,18 +2,27 @@
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 import Card from '../components/Card.astro';
+
+const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
+const mdPosts = await Astro.glob("./blogs/*/*.md");
+const allPosts = [...unsortedPosts, ...mdPosts]
 ---
 <MySiteLayout>
   
   
   <div>
-	<div class="grow-0 grid grid-cols-2 gap-2 lg:grid-cols-4">
+	<div class="grow-y-0  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
 
-		<Card title='Hello' image={`https://picsum.photos/seed/stockholm/200/200`} description='hello hello' tags={['sweden', 'population']} />
-		<Card title='Hello' image={`https://picsum.photos/seed/india/200/200`} description='hello hello' tags={['sweden', 'population']} />
-		<Card title='Hello' image={`https://picsum.photos/seed/paris/200/200`} description='hello hello' tags={['sweden', 'population']} />
-		<Card title='Hello' image={`https://picsum.photos/seed/population/200/200`} description='hello hello' tags={['sweden', 'population']} />
-		<Card title='Hello' image={`https://picsum.photos/seed/fashion/200/200`} description='hello hello' tags={['sweden', 'population']} />
+		{allPosts && allPosts?.map((p) => (
+						<Card
+							title={p.frontmatter.title}
+							description={p.frontmatter?.description}
+							publishDate={p.frontmatter?.publishDate}
+							url={p.url}
+							image={p.frontmatter?.image}
+							tags={p.frontmatter?.tags}
+						/>
+					))}
 		
 	
 	  </div>

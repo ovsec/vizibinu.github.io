@@ -1,0 +1,14 @@
+---
+import MySiteLayout from "../../../layouts/MySiteLayout.astro";
+
+export const frontmatter = {
+    title : "Hello",
+    image: {
+        src: "https://picsum.photos/seed/picsum/200/300",
+        alt: "hello"
+    }
+}
+---
+<MySiteLayout>
+<div>{frontmatter.title}</div>
+</MySiteLayout>
