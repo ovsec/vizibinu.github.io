@@ -5,5 +5,11 @@ module.exports = {
 	},
 	plugins: [
 		require('@tailwindcss/line-clamp'),
+		require('@tailwindcss/typography'),
 	],
+	variants: {
+		extend: {
+		  typography: ['dark']
+		}
+	  },
 };

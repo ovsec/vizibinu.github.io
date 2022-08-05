@@ -1,12 +1,13 @@
 ---
     const { image, title, description, tags, url } = Astro.props
 ---
-<article  class="relative group  rounded overflow-hidden shadow-md shadow-[#121212]  " >
-    <a href={url} class="relative h-48 overflow-hidden">
-    {image && <img loading="lazy" class=" w-full h-48 group-hover:scale-105 overflow-hidden" src={image.src} alt={image?.alt} />}
-    <div class="absolute top-0 flex flex-col justify-end group-hover:scale-110 bottom-0 w-full px-6 py-4 bg-gradient-to-t from-[#111] to-transparent">
-      <div class="font-bold text-xl mb-2 truncate">{title}</div>
-      <p class="text-[#ccc] text-sm line-clamp-3">
+<article  class="relative group  rounded overflow-hidden  " >
+    <a href={url} class="relative w-full h-48 overflow-hidden">
+    {image && <img loading="lazy" class="object-cover z-0 w-full h-48 group-hover:scale-105 overflow-hidden" src={image.src} alt={image?.alt} />} 
+    
+    <div class="absolute top-0 group-hover:scale-110 bottom-0 w-full flex flex-col justify-end  px-6 py-4 bg-gradient-to-t from-[#111] to-transparent">
+      <div class="font-bold text-xl mb-2 tracking-tight truncate">{title}</div>
+      <p class="text-[#ccc] text-sm font-normal leading-normal opacity-75 line-clamp-3">
         {description}
       </p>
       

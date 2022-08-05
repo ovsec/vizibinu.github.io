@@ -4,7 +4,7 @@ import svelte from "@astrojs/svelte";
 
 //import mdx from "@astrojs/mdx";
 
-const dev = true;
+
 // https://astro.build/config
 export default defineConfig({
  

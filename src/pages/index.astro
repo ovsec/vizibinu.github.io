@@ -3,9 +3,11 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 import Card from '../components/Card.astro';
 
+
 const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
 const mdPosts = await Astro.glob("./blogs/*/*.md");
 const allPosts = [ ...unsortedPosts, ...mdPosts]
+
 
 ---
 <MySiteLayout >
