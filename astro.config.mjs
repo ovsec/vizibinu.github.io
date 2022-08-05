@@ -10,7 +10,7 @@ export default defineConfig({
  
   integrations: [tailwind(), svelte()],
   site: "https://sahaabhishek.github.io",
-  base:   "/beyonde",
+  
   vite: {
     ssr: {
       noExternal: ['three', 'troika-three-text', 'geolib'],
