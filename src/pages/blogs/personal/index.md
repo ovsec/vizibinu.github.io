@@ -1,5 +1,5 @@
 ---
-layout: "../../../layouts/MySiteLayout.astro"
+layout: "../../../layouts/BlogLayout.astro"
 title: "Hello galaxy of possibilities!"
 description: "Take your blog to astronomical heights. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky"
 publishDate: "12 Sep 2021"

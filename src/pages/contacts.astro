@@ -1,10 +1,22 @@
 ---
 import MySiteLayout from "../layouts/MySiteLayout.astro"
+import { Icon } from 'astro-icon'
 ---
 
 
 <MySiteLayout>
-    <div>
-        Abhishek Saha
+    <div class="place-self-center">
+        
+        <a target="_blank" rel="noreferrer" href="https://twitter.com/MrAbhisheksaha" class="inline-flex relative gap-2 items-center bg-[#222] rounded-md p-4 hover:bg-[#333] shadow-sm shadow-zinc-800">
+            <img src="https://pbs.twimg.com/profile_images/1374402396030267395/5i9jse_F_400x400.jpg" class="w-10 h-10 rounded-full" alt="Abhishek Saha" />
+            <div>
+                <div>Abhishek Saha</div>
+                <div class="text-sm text-gray-500">Solution Architect @ PostNord</div>
+            </div>
+            <div class="absolute -right-1 -top-1 text-blue-500 z-10 w-5 h-5">
+                <Icon name="icon-park-outline:twitter" />
+            </div>
+            
+        </a>
     </div>    
 </MySiteLayout>

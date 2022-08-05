@@ -1,8 +1,9 @@
 ---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
 import MySiteLayout from "../../../layouts/MySiteLayout.astro";
 
 export const frontmatter = {
-    title : "Hello",
+    title: "Hello",
     image: {
         src: "https://picsum.photos/seed/picsum/200/300",
         alt: "hello"
@@ -11,10 +12,14 @@ export const frontmatter = {
 }
 
 ---
-<MySiteLayout>
-<div>{frontmatter.title}</div>
-<code>
+
+<BlogLayout>
+    
+        <div>{frontmatter.title}</div>
+        <code>
     When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
     
 </code>
-</MySiteLayout>
+
+
+</BlogLayout>
