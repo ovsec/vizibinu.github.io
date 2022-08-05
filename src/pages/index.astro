@@ -3,11 +3,12 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 import Card from '../components/Card.astro';
 
-//const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
+const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
 const mdPosts = await Astro.glob("./blogs/*/*.md");
-const allPosts = [ ...mdPosts]
+const allPosts = [ ...unsortedPosts, ...mdPosts]
+console.log(import.meta.env)
 ---
-<MySiteLayout>
+<MySiteLayout >
   
   
   <div>
@@ -15,9 +16,9 @@ const allPosts = [ ...mdPosts]
 
 		{allPosts && allPosts?.map((p) => (
 						<Card
-							title={p.frontmatter.title}
-							description={p.frontmatter?.description}
-							publishDate={p.frontmatter?.publishDate}
+							title={p?.frontmatter.title}
+							description={p?.frontmatter?.description}
+							publishDate={p?.frontmatter?.publishDate}
 							url={p.url}
 							image={p.frontmatter?.image}
 							tags={p.frontmatter?.tags}

@@ -4,15 +4,17 @@ import svelte from "@astrojs/svelte";
 
 //import mdx from "@astrojs/mdx";
 
+const dev = true;
 // https://astro.build/config
 export default defineConfig({
  
   integrations: [tailwind(), svelte()],
   site: "https://sahaabhishek.github.io",
-  base: "/beyonde",
+  base:   !dev ?"/beyonde" : "/",
   vite: {
     ssr: {
-      noExternal: ['three', 'troika-three-text', 'geolib']
+      noExternal: ['three', 'troika-three-text', 'geolib'],
+      external: ["svgo"],
     }
   },
   legacy: {

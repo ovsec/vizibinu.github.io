@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/MySiteLayout.astro"
 title: "Hello galaxy of possibilities!"
-description: "Take your blog to astronomical heights"
+description: "Take your blog to astronomical heights. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky. Space shuttle leaving curved trail in the sky"
 publishDate: "12 Sep 2021"
 followMe:
   username: "MrAbhisheksaha"
@@ -9,7 +9,8 @@ followMe:
 halfTheMeaning: 21
 image:
   src: "https://picsum.photos/seed/sun/200/300"
-  alt: "Space shuttle leaving curved trail in the sky"
+  alt: "Space shuttle leaving curved trail in the sky. "
+tags: ["hello"]
 setup: |  
   import FollowMe from "../../../components/FollowMe.astro"
 ---
