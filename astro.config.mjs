@@ -9,7 +9,7 @@ const dev = true;
 export default defineConfig({
  
   integrations: [tailwind(), svelte()],
-  site: "https://sahaabhishek.github.io",
+  site: "https://vizibinu.github.io",
   
   vite: {
     ssr: {
