@@ -2,6 +2,7 @@
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 import Card from '../components/Card.astro';
+import Stories from '../components/Stories.astro';
 
 
 const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
@@ -13,7 +14,8 @@ const allPosts = [ ...unsortedPosts, ...mdPosts]
 <MySiteLayout >
   
   
-  <div>
+  <div class="space-y-4">
+	<Stories />
 	<h1 class="text-lg font-bold">Blogs</h1>
 	<div class="grow-y-0  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
 
