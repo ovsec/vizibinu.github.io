@@ -3,6 +3,7 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+	darkMode: 'class',
 	plugins: [
 		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/typography'),
