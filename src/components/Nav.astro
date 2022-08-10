@@ -1,23 +1,35 @@
 ---
 import Logo from "./Logo.astro"
 import { Icon } from 'astro-icon'
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <div class="fixed bottom-0 z-40 bg-gradient-to-t md:bg-gradient-to-b from-black to-[#111] md:relative  w-full container max-w-7xl mx-auto  ">
 	<div class="relative flex items-center justify-between gap-4 p-4">
 		
 
-		<Logo/>
-		<div class="flex gap-2 items-center flex-grow"></div>
-		<div class="flex  items-center">
+		<div class="hidden md:block"><Logo/></div>
+		
+		<div class="flex grow md:grow-0 md:w-1/2  items-center">
 		
 		
 		
-		<div class="inline-flex gap-x-4 h-6 text-green-500 ">
-			<a href="/" class="inline-flex hover:brightness-200">
-				<Icon  name="akar-icons:home" />
+		<div class="inline-flex gap-x-4 h-6 justify-between grow  text-green-500 transition-all  ">
+			<a href="/" class={`inline-flex hover:brightness-200 ${currentPath == "" ? "text-indigo-600": ""} `}>
+				<Icon class="block md:hidden"  name="akar-icons:home" />
+				<span class="hidden md:block">Home</span>
 			</a>
-			<a href="/" class="inline-flex hover:brightness-200">
+			<a href="/blogs" class={`inline-flex hover:brightness-200 ${currentPath == "blogs" ? "text-indigo-600": ""} `}>
+				<Icon  name="akar-icons:edit" />
+			</a>
+			<a href="/" class="inline-flex hover:brightness-200 ">
+				<Icon  name="akar-icons:bell" />
+			</a>
+			<a href="/" class="inline-flex hover:brightness-200 ">
+				<Icon  name="radix-icons:avatar" />
+			</a>
+			<a href="/" class=" hover:brightness-200 hidden md:inline-flex">
 				<Icon  name="carbon:overflow-menu-vertical" />
 			</a>
 			

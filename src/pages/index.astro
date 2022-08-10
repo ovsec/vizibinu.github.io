@@ -5,9 +5,7 @@ import Card from '../components/Card.astro';
 import Stories from '../components/Stories.astro';
 
 
-const unsortedPosts = await Astro.glob("./blogs/*/*.astro");
-const mdPosts = await Astro.glob("./blogs/*/*.md");
-const allPosts = [ ...unsortedPosts, ...mdPosts]
+
 
 
 ---
@@ -16,22 +14,7 @@ const allPosts = [ ...unsortedPosts, ...mdPosts]
   
   <div class="space-y-4">
 	<Stories />
-	<h1 class="text-lg font-bold">Blogs</h1>
-	<div class="grow-y-0  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-
-		{allPosts && allPosts?.map((p) => (
-						<Card
-							title={p?.frontmatter.title}
-							description={p?.frontmatter?.description}
-							publishDate={p?.frontmatter?.publishDate}
-							url={p.url}
-							image={p.frontmatter?.image}
-							tags={p.frontmatter?.tags}
-						/>
-					))}
-		
 	
-	  </div>
   </div>
 	
 </MySiteLayout>
