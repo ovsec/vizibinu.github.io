@@ -17,10 +17,10 @@ const currentPath = pathname.slice(1); // remove the first "/"
 		
 		<div class="inline-flex gap-x-4 h-6 justify-between grow   text-zinc-700 transition-all  ">
 			<a href="/" class={`inline-flex hover:brightness-200 ${currentPath == "" ? "text-green-600": ""} `}>
-				<Icon class="block md:hidden"  name="akar-icons:home" />
-				<span class="hidden md:block">Home</span>
+				<Icon class=""  name="akar-icons:home" />
+				
 			</a>
-			<a href="/blogs" class={`inline-flex hover:brightness-200 ${currentPath == "blogs" ? "text-green-600": ""} `}>
+			<a href="/blogs" class={`inline-flex hover:brightness-200 ${currentPath.indexOf("blogs") !== -1 ? "text-green-600": ""} `}>
 				<Icon  name="akar-icons:edit" />
 			</a>
 			<a href="/" class="inline-flex hover:brightness-200  ">

@@ -3,6 +3,7 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 import Card from '../components/Card.astro';
 import Stories from '../components/Stories.astro';
+import { Icon } from 'astro-icon'
 
 
 
@@ -15,17 +16,31 @@ import Stories from '../components/Stories.astro';
   <div class="space-y-6">
 	<!-- <Stories /> -->
 	<section class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-		<div class="space-y-2"> 
+		<div class="place-self-center md:order-last">
+			<img src="https://i.picsum.photos/id/602/400/400.jpg?grayscale&hmac=dZqUoXBxNb-itKngVGxzMKaVsPU6FbgiU_wEzrp8Lz4" class="w-full aspect-square rounded-md " />
+		</div>
+		<div class="space-y-4"> 
 			<div class="font-lato font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-tr  from-green-600 to-indigo-800">
 				Hi this is Abhishek Saha
 			</div>
 			<div class="font-normal text-lg text-zinc-400">
-				I am a Solution Architect
+				I am a Solution Architect. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam praesentium omnis animi, ex soluta quia labore fuga molestiae distinctio minus quos eveniet voluptates incidunt perspiciatis provident in! Et, officiis in.
+			</div>
+			<div class="inline-flex gap-4 items-center">
+				<button class="px-4 py-2 bg-indigo-600 rounded-full">Check My blogs</button>
+				<a href="/blogs" class="inline-flex items-center gap-2 border-2 border-zinc-700 rounded-full px-4 py-2">
+					<Icon name="ion:bar-chart-outline" class="w-4 h-4" />
+					<span>See my blogs</span>
+				</a>
+			</div>
+			<div class="flex h-6 space-x-2 text-zinc-500">
+				<Icon name="ri:linkedin-box-fill" />
+				<Icon name="ri:facebook-line" />
+				<Icon name="ri:twitter-line" />
+				
 			</div>
 		</div>
-		<div class="place-self-center">
-			<img src="https://i.picsum.photos/id/602/400/400.jpg?grayscale&hmac=dZqUoXBxNb-itKngVGxzMKaVsPU6FbgiU_wEzrp8Lz4" class="w-full aspect-square rounded-md " />
-		</div>
+		
 
 	</section>
   </div>
