@@ -51,11 +51,13 @@ import { Icon } from 'astro-icon'
 </MySiteLayout>
 
 <style is:global>
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-tap-highlight-color: transparent;
+	html {
+		-webkit-tap-highlight-color: rgba(255,255,255,0);
+		-webkit-tap-highlight-color: transparent;
+	}
 	*:focus {
-    outline: none !important;
+	outline: none !important;
 	
 	}
 
-</style>
+</style> 
