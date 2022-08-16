@@ -4,10 +4,13 @@ import MySiteLayout from "./MySiteLayout.astro"
 ---
 
 <MySiteLayout>
-    <div class=" prose prose-sm lg:prose-xl dark:prose-invert w-full max-w-full prose-p:font-normal">
+    <div class=" prose prose-md  dark:prose-invert max-w-3xl mx-auto prose-p:font-normal">
         <div class="space-y-2">
             <div class="text-3xl font-bold">Title</div>
             <time class="text-sm font-normal text-zinc-400">2022-12-12</time>
+            <h5>The current URL is: {Astro.url}</h5>
+            <h5>The current URL pathname is: {Astro.url.pathname}</h5>
+            <h5>The current URL origin is: {Astro.url.origin}</h5>
         </div>
         <slot />
     </div>
