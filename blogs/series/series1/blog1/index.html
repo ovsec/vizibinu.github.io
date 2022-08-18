@@ -9,12 +9,28 @@
     <meta name="theme-color" content="black" media="(prefers-color-scheme: dark)">
 
     <title>Abhishek's Blog</title>
-       
-<link rel="stylesheet" href="/assets/4ce69f62.cca894cf.css" /></head>
+    <!-- <script is:inline>
+        const theme = (() => {
+          if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+            return localStorage.getItem("theme");
+          }
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          }
+          return "light";
+        })();
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+        window.localStorage.setItem("theme", theme);
+      </script> -->   
+<link rel="stylesheet" href="/assets/4ce69f62.24853fbf.css" /></head>
 
 <body class="dark">
     
-    <div class=" relative bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-gray-200  w-full min-h-screen body-font font-lato font-medium antialiased
+    <div class="  bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-zinc-100  w-full min-h-screen body-font font-nunito font-medium antialiased
         flex flex-col ">
 
         <div class="fixed bottom-0 z-40 md:relative  w-full container max-w-7xl mx-auto bg-[#111] md:bg-transparent ">
@@ -26,7 +42,7 @@
     <span>
         <svg xml:space="preserve" viewBox="0 0 100 100" class="w-10 h-10 text-green-500 animate-pulse " astro-icon="loading-svgrepo-com"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4" d="M50.188 26.812c12.806 0 23.188 10.381 23.188 23.188"/><g fill="currentColor"><circle cx="73.375" cy="50" r="1.959"/><circle cx="72.029" cy="57.704" r="1.959"/><circle cx="68.237" cy="64.579" r="1.959"/><circle cx="62.324" cy="69.759" r="1.959"/><circle cx="55.013" cy="72.699" r="1.959"/></g><g fill="currentColor"><ellipse cx="27.045" cy="51.843" rx="1.959" ry="1.959" transform="rotate(-4.554 27.057 51.864)"/><ellipse cx="28.998" cy="59.416" rx="1.959" ry="1.959" transform="rotate(-4.554 29.012 59.44)"/><ellipse cx="33.325" cy="65.967" rx="1.959" ry="1.959" transform="rotate(-4.554 33.34 65.996)"/><ellipse cx="39.63" cy="70.661" rx="1.959" ry="1.959" transform="rotate(-4.554 39.649 70.691)"/><ellipse cx="47.152" cy="73.012" rx="1.959" ry="1.959" transform="rotate(-4.554 47.174 73.042)"/></g><g fill="currentColor"><ellipse cx="27.71" cy="44.049" rx="1.959" ry="1.959" transform="rotate(-4.974 27.696 44.029)"/><ellipse cx="30.892" cy="36.872" rx="1.959" ry="1.959" transform="rotate(-4.974 30.877 36.854)"/><ellipse cx="36.334" cy="31.199" rx="1.959" ry="1.959" transform="rotate(-4.974 36.316 31.185)"/><ellipse cx="43.363" cy="27.636" rx="1.959" ry="1.959" transform="rotate(-4.974 43.341 27.624)"/></g></svg>
     </span>
-    <span class="hidden lg:block"> Abhishek Saha</span>
+    <span class="hidden lg:block uppercase font-semibold"> Abhishek Saha</span>
 </div></div>
 		
 		<div class="flex grow md:grow-0 md:w-1/2  items-center">
@@ -38,7 +54,7 @@
 				<svg viewBox="0 0 24 24" class="" astro-icon="akar-icons:home"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 20v-7.826a4 4 0 0 0-1.253-2.908l-7.373-6.968a2 2 0 0 0-2.748 0L3.253 9.266A4 4 0 0 0 2 12.174V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"/></svg>
 				
 			</a>
-			<a href="/blogs" class="inline-flex hover:brightness-200 text-green-600 ">
+			<a href="/blogs" class="inline-flex hover:brightness-200 text-white ">
 				<svg viewBox="0 0 24 24" astro-icon="akar-icons:edit"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16.474 5.408 2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></g></svg>
 			</a>
 			<a href="/" class="inline-flex hover:brightness-200  ">
@@ -50,6 +66,10 @@
 			<a href="/" class=" hover:brightness-200 hidden md:inline-flex">
 				<svg viewBox="0 0 32 32" astro-icon="carbon:overflow-menu-vertical"><circle cx="16" cy="8" r="2" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/><circle cx="16" cy="24" r="2" fill="currentColor"/></svg>
 			</a>
+			<!-- <div class="relative group">
+				<div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-zinc-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+				<button class=" hover:saturate-200 drop-shadow-2xl -inset-0.5 shadow-2xl shadow-white hidden md:inline-flex" >{true ? "🌙" : "🌞"}</button> 
+			</div> -->
 			
 			
 		</div>
@@ -62,6 +82,7 @@
         <div class="flex-grow container max-w-5xl mx-auto grid grid-cols-1  p-4 sm:p-8 relative h-full  ">
             
             <div class=" prose prose-md  dark:prose-invert prose-p:text-zinc-400  min-w-fit mx-auto ">
+        
         <div class="space-y-2">
             <div class="text-3xl font-bold">Title</div>
             <time class="text-sm font-normal text-zinc-400">2022-12-12</time>

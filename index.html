@@ -9,13 +9,29 @@
     <meta name="theme-color" content="black" media="(prefers-color-scheme: dark)">
 
     <title>Abhishek's Blog</title>
-       
-<link rel="stylesheet" href="/assets/4ce69f62.cca894cf.css" />
+    <!-- <script is:inline>
+        const theme = (() => {
+          if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+            return localStorage.getItem("theme");
+          }
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          }
+          return "light";
+        })();
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+        window.localStorage.setItem("theme", theme);
+      </script> -->   
+<link rel="stylesheet" href="/assets/4ce69f62.24853fbf.css" />
 <link rel="stylesheet" href="/assets/10fb0b5f.b33fb6c0.css" /></head>
 
 <body class="dark">
     
-    <div class=" relative bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-gray-200  w-full min-h-screen body-font font-lato font-medium antialiased
+    <div class="  bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-zinc-100  w-full min-h-screen body-font font-nunito font-medium antialiased
         flex flex-col ">
 
         <div class="fixed bottom-0 z-40 md:relative  w-full container max-w-7xl mx-auto bg-[#111] md:bg-transparent ">
@@ -27,7 +43,7 @@
     <span>
         <svg xml:space="preserve" viewBox="0 0 100 100" class="w-10 h-10 text-green-500 animate-pulse " astro-icon="loading-svgrepo-com"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4" d="M50.188 26.812c12.806 0 23.188 10.381 23.188 23.188"/><g fill="currentColor"><circle cx="73.375" cy="50" r="1.959"/><circle cx="72.029" cy="57.704" r="1.959"/><circle cx="68.237" cy="64.579" r="1.959"/><circle cx="62.324" cy="69.759" r="1.959"/><circle cx="55.013" cy="72.699" r="1.959"/></g><g fill="currentColor"><ellipse cx="27.045" cy="51.843" rx="1.959" ry="1.959" transform="rotate(-4.554 27.057 51.864)"/><ellipse cx="28.998" cy="59.416" rx="1.959" ry="1.959" transform="rotate(-4.554 29.012 59.44)"/><ellipse cx="33.325" cy="65.967" rx="1.959" ry="1.959" transform="rotate(-4.554 33.34 65.996)"/><ellipse cx="39.63" cy="70.661" rx="1.959" ry="1.959" transform="rotate(-4.554 39.649 70.691)"/><ellipse cx="47.152" cy="73.012" rx="1.959" ry="1.959" transform="rotate(-4.554 47.174 73.042)"/></g><g fill="currentColor"><ellipse cx="27.71" cy="44.049" rx="1.959" ry="1.959" transform="rotate(-4.974 27.696 44.029)"/><ellipse cx="30.892" cy="36.872" rx="1.959" ry="1.959" transform="rotate(-4.974 30.877 36.854)"/><ellipse cx="36.334" cy="31.199" rx="1.959" ry="1.959" transform="rotate(-4.974 36.316 31.185)"/><ellipse cx="43.363" cy="27.636" rx="1.959" ry="1.959" transform="rotate(-4.974 43.341 27.624)"/></g></svg>
     </span>
-    <span class="hidden lg:block"> Abhishek Saha</span>
+    <span class="hidden lg:block uppercase font-semibold"> Abhishek Saha</span>
 </div></div>
 		
 		<div class="flex grow md:grow-0 md:w-1/2  items-center">
@@ -35,7 +51,7 @@
 		
 		
 		<div class="inline-flex gap-x-4 h-6 justify-between grow   text-zinc-700 transition-all  ">
-			<a href="/" class="inline-flex hover:brightness-200 text-green-600 ">
+			<a href="/" class="inline-flex hover:brightness-200 text-white ">
 				<svg viewBox="0 0 24 24" class="" astro-icon="akar-icons:home"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 20v-7.826a4 4 0 0 0-1.253-2.908l-7.373-6.968a2 2 0 0 0-2.748 0L3.253 9.266A4 4 0 0 0 2 12.174V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"/></svg>
 				
 			</a>
@@ -51,6 +67,10 @@
 			<a href="/" class=" hover:brightness-200 hidden md:inline-flex">
 				<svg viewBox="0 0 32 32" astro-icon="carbon:overflow-menu-vertical"><circle cx="16" cy="8" r="2" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/><circle cx="16" cy="24" r="2" fill="currentColor"/></svg>
 			</a>
+			<!-- <div class="relative group">
+				<div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-zinc-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+				<button class=" hover:saturate-200 drop-shadow-2xl -inset-0.5 shadow-2xl shadow-white hidden md:inline-flex" >{true ? "🌙" : "🌞"}</button> 
+			</div> -->
 			
 			
 		</div>
@@ -68,16 +88,16 @@
 		<div class="place-self-center md:order-last  md:blur-0">
 			<img src="https://i.picsum.photos/id/602/400/400.jpg?grayscale&hmac=dZqUoXBxNb-itKngVGxzMKaVsPU6FbgiU_wEzrp8Lz4" class="w-full aspect-square rounded-md brightness-90 grayscale ">
 		</div>
-		<div class="space-y-6 -translate-y-1/3 md:translate-y-0 "> 
-			<div class="font-lato font-extrabold  text-transparent  md:text-6xl text-5xl bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800">
+		<div class="space-y-6 -translate-y-1/3 md:translate-y-0 antialiased "> 
+			<div class="font-extrabold  md:text-5xl text-5xl "> <!--bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800 -->
 				Hi this is Abhishek Saha 
 			</div>
-			<div class="font-normal text-base text-zinc-400">
+			<p class=" ">
 				I am a Solution Architect 👋. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam praesentium omnis animi, ex soluta quia labore fuga molestiae distinctio minus quos eveniet voluptates incidunt perspiciatis provident in! Et, officiis in.
-			</div>
+			</p>
 			<div class="inline-flex gap-4 items-center">
-				<button class="px-4 py-2 border-2 border-green-600 rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all">Check My blogs</button>
-				<a href="/blogs" class="inline-flex items-center gap-2 border-2 border-zinc-700 rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all">
+				<button class="px-4 py-2 border-2 border-current rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all ">Check My blogs</button>
+				<a href="/blogs" class="inline-flex items-center gap-2  rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all">
 					<svg viewBox="0 0 512 512" class="w-4 h-4" astro-icon="ion:bar-chart-outline"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M32 32v432a16 16 0 0 0 16 16h432"/><rect width="80" height="192" x="96" y="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" rx="20" ry="20"/><rect width="80" height="240" x="240" y="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" rx="20" ry="20"/><rect width="80" height="304" x="383.64" y="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" rx="20" ry="20"/></svg>
 					<span>See my blogs</span>
 				</a>
@@ -93,7 +113,17 @@
 
 	</section>
 	<section class="">
-		
+		<div>
+			<div class="inline-flex items-center flex-col space-y-1 text-pink-500 text-sm">
+    <div class="inline-flex items-center p-1  border-2 border-pink-600 rounded-full">
+        <img src="https://pbs.twimg.com/profile_images/1374402396030267395/5i9jse_F_400x400.jpg" class="w-10 h-10 rounded-full" alt="Abhishek Saha">
+
+    </div>
+    <div>
+        Abhi
+    </div>
+</div>
+		</div>
 	</section>
   </div>
             
