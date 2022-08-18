@@ -46,12 +46,12 @@ import Nav from "../components/Nav.astro";
 
         <Nav/>
         <div
-            class="flex-grow container max-w-5xl mx-auto grid grid-cols-1  p-4 sm:p-8 relative h-full  ">
+            class="flex-grow container max-w-5xl mx-auto grid grid-cols-1  p-4 sm:p-8 relative h-full  overflow-y-auto">
             
             <slot />
             
         </div>
-        <Footer />
+        <Footer  />
     </div>
 </body>
 
