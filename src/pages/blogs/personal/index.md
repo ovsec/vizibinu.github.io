@@ -8,7 +8,7 @@ followMe:
   href: "https://twitter.com/MrAbhisheksaha"
 halfTheMeaning: 21
 image:
-  src: "https://picsum.photos/seed/flag/200/300?blur"
+  src: "https://picsum.photos/seed/flag/800/800?blur"
   alt: "Space shuttle leaving curved trail in the sky. "
 tags: ["hello"]
 setup: |  
@@ -29,7 +29,21 @@ Markdown is the most popular markup language that can be used to format document
     ## This is h2
     ### This is h3
 
-    
+# My cool diagrams
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
     Also can show code difference
 
 
