@@ -1,7 +1,7 @@
 ---
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 
-import Card from '../components/Card.astro';
+import Avatar from '../components/Avatar.astro';
 import Stories from '../components/Stories.astro';
 import { Icon } from 'astro-icon'
 
@@ -20,16 +20,16 @@ import mePhoto from '../assets/images/me.png';
 		<div class="place-self-center md:order-last  md:blur-0">
 			<img src="https://i.picsum.photos/id/602/400/400.jpg?grayscale&hmac=dZqUoXBxNb-itKngVGxzMKaVsPU6FbgiU_wEzrp8Lz4" class="w-full aspect-square rounded-md brightness-90 grayscale " />
 		</div>
-		<div class="space-y-6 -translate-y-1/3 md:translate-y-0 "> 
-			<div class="font-lato font-extrabold  text-transparent  md:text-6xl text-5xl bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800">
+		<div class="space-y-6 -translate-y-1/3 md:translate-y-0 antialiased "> 
+			<div class="font-extrabold  md:text-5xl text-5xl "> <!--bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800 -->
 				Hi this is Abhishek Saha 
 			</div>
-			<div class="font-normal text-base text-zinc-400">
+			<p class=" ">
 				I am a Solution Architect 👋. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam praesentium omnis animi, ex soluta quia labore fuga molestiae distinctio minus quos eveniet voluptates incidunt perspiciatis provident in! Et, officiis in.
-			</div>
+			</p>
 			<div class="inline-flex gap-4 items-center">
-				<button class="px-4 py-2 border-2 border-green-600 rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all">Check My blogs</button>
-				<a href="/blogs" class="inline-flex items-center gap-2 border-2 border-zinc-700 rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all">
+				<button class="px-4 py-2 border-2 border-current rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all ">Check My blogs</button>
+				<a href="/blogs" class="inline-flex items-center gap-2  rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all">
 					<Icon name="ion:bar-chart-outline" class="w-4 h-4" />
 					<span>See my blogs</span>
 				</a>
@@ -45,7 +45,9 @@ import mePhoto from '../assets/images/me.png';
 
 	</section>
 	<section class="">
-		
+		<div>
+			<Avatar name="Abhi" color="pink-500" />
+		</div>
 	</section>
   </div>
 	

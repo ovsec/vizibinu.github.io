@@ -14,7 +14,7 @@ export default defineConfig({
   
   vite: {
     ssr: {
-      noExternal: ['three', 'troika-three-text', 'geolib'],
+      noExternal: ['three', 'troika-three-text', 'geolib', '@fontsource/nunito'],
       external: ["svgo"],
     }
   },

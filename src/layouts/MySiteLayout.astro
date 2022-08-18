@@ -1,6 +1,7 @@
 ---
 // Component Imports
 //import Button from "../components/Button.astro";
+import '@fontsource/nunito';
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 
@@ -18,16 +19,32 @@ import Nav from "../components/Nav.astro";
     <meta name="theme-color" content="black" media="(prefers-color-scheme: dark)">
 
     <title>Abhishek's Blog</title>
-       
+    <!-- <script is:inline>
+        const theme = (() => {
+          if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+            return localStorage.getItem("theme");
+          }
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          }
+          return "light";
+        })();
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+        window.localStorage.setItem("theme", theme);
+      </script> -->   
 </head>
 
 <body class="dark">
     
     <div
-        class=" relative bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-gray-200  w-full min-h-screen body-font font-lato font-medium antialiased
+        class="  bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-zinc-100  w-full min-h-screen body-font font-nunito font-medium antialiased
         flex flex-col ">
 
-        <Nav />
+        <Nav/>
         <div
             class="flex-grow container max-w-5xl mx-auto grid grid-cols-1  p-4 sm:p-8 relative h-full  ">
             
