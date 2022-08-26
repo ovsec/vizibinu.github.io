@@ -14,9 +14,10 @@ export default defineConfig({
   
   vite: {
     ssr: {
-      noExternal: ['three', 'troika-three-text', 'geolib', '@fontsource/nunito'],
+      noExternal: ['three', 'troika-three-text', 'geolib', '@fontsource/nunito', 'cube.gl', 'astro-seo'],
       external: ["svgo"],
     }
+    
   },
   legacy: {
     astroFlavoredMarkdown: true

@@ -28,6 +28,8 @@
     "@threlte/extras": "^4.0.1",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
+    "astro-seo": "^0.5.1",
+    "cube.gl": "^1.0.20",
     "geolib": "^3.3.3",
     "pbf": "^3.2.1",
     "three": "^0.142.0"
