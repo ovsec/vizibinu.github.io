@@ -1,69 +1,154 @@
 ---
-import MySiteLayout from '../layouts/MySiteLayout.astro';
+import MySiteLayout from "../layouts/MySiteLayout.astro";
 
-import Avatar from '../components/Avatar.astro';
-import Particle from '../components/Particle.svelte';
-import Stories from '../components/Stories.astro';
-import { Icon } from 'astro-icon'
+import Avatar from "../components/Avatar.astro";
 
-import mePhoto from '../assets/images/me.png';
+import { Icon } from "astro-icon";
 
+import mePhoto from "../assets/images/me.png";
 
-
+import testimonials from "../data/testimonials.json";
 
 ---
 
-<MySiteLayout >
-	
-	
-  <div class="space-y-8 ">
-	<!-- <Stories /> -->
-	<section class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-		<div class="place-self-center md:order-last  md:blur-0">
-			<img src="https://i.picsum.photos/id/602/400/400.jpg?grayscale&hmac=dZqUoXBxNb-itKngVGxzMKaVsPU6FbgiU_wEzrp8Lz4" class="w-full aspect-square rounded-md brightness-90 grayscale " />
-		</div>
-		<div class="space-y-8 -translate-y-1/3 md:translate-y-0 antialiased "> 
-			<div class="font-extrabold tracking-wide  md:text-5xl text-5xl "> <!--bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800 -->
-				Hi this is Abhishek Saha 
+<MySiteLayout>
+	<div class="space-y-8">
+		<!-- <Stories /> -->
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div
+				class="place-self-center md:order-last md:blur-0 w-1/2 md:w-full"
+			>
+				<img
+					src="https://pbs.twimg.com/profile_images/1374402396030267395/5i9jse_F_400x400.jpg"
+					class="w-full aspect-square rounded-full md:rounded-md brightness-90 grayscale"
+				/>
 			</div>
-			<p class="flex leading-normal text-start break-words">
-				I am a Solution Architect 👋. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam praesentium omnis animi, ex soluta quia labore fuga molestiae distinctio minus quos eveniet voluptates incidunt perspiciatis provident in! Et, officiis in.
-			</p>
-			<div class="flex gap-4 items-center">
-				<button class="px-4 py-2 border-2 border-current rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all ">Check My blogs</button>
-				<a href="/blogs" class="inline-flex items-center gap-2  rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all">
-					<Icon name="ion:bar-chart-outline" class="w-4 h-4" />
-					<span>See my blogs</span>
-				</a>
-			</div>
-			<div class="flex"></div>
-			<div class="flex h-7 space-x-3  text-zinc-500 ">
-				<Icon name="ri:linkedin-box-fill" class="cursor-pointer hover:text-zinc-100 transition-all delay-100 "/>
-				<Icon name="ri:facebook-line" class="cursor-pointer hover:text-zinc-100 transition-all delay-100 "/>
-				<Icon name="ri:twitter-line" class="cursor-pointer hover:text-zinc-100 transition-all delay-100 "/>
-				
-			</div>
-		</div>
-		
+			<div class="space-y-8 antialiased">
+				<div class="font-extrabold tracking-wide md:text-5xl text-5xl">
+					<!--bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800 -->
 
-	</section>
-	<section class="">
-		<div>
-			<Avatar name="Abhi" color="pink-500" />
-		</div>
-	</section>
-  </div>
-	
+					Hi this is Abhishek Saha
+				</div>
+				<p class="flex leading-normal text-start break-words">
+					I am a Solution Architect 👋. Lorem ipsum dolor sit amet
+					consectetur adipisicing elit. Numquam praesentium omnis
+					animi, ex soluta quia labore fuga molestiae distinctio minus
+					quos eveniet voluptates incidunt perspiciatis provident in!
+					Et, officiis in.
+				</p>
+				<div class="flex gap-4 items-center">
+					<button
+						class="px-4 py-2 border-2 border-current rounded-full hover:scale-105 hover:-translate-y-0.5 transition-all"
+						>Check My blogs</button
+					>
+					<a
+						href="/blogs"
+						class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:border-transparent hover:-translate-y-0.5 transition-all"
+					>
+						<Icon name="ion:bar-chart-outline" class="w-4 h-4" />
+						<span>See my blogs</span>
+					</a>
+				</div>
+				<div class="flex"></div>
+				<div class="flex h-7 space-x-3 text-zinc-500">
+					<Icon
+						name="ri:linkedin-box-fill"
+						class="cursor-pointer hover:text-zinc-100 transition-all delay-100"
+					/>
+					<Icon
+						name="ri:facebook-line"
+						class="cursor-pointer hover:text-zinc-100 transition-all delay-100"
+					/>
+					<Icon
+						name="ri:twitter-line"
+						class="cursor-pointer hover:text-zinc-100 transition-all delay-100"
+					/>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div>
+				<Avatar name="Abhi" color="pink-500" />
+			</div>
+		</section>
+		<section>
+			<div class="w-full max-w-5xl mx-auto">
+				<div class="text-center max-w-xl mx-auto">
+					<h1
+						class="text-4xl md:text-4xl font-bold mb-5 text-neutral-600"
+					>
+						What people <br />are saying.
+					</h1>
+					<h3 class="text-xl mb-5 font-light">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					</h3>
+					<div class="text-center mb-10">
+						<span
+							class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"
+						></span>
+						<span
+							class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"
+						></span>
+						<span
+							class="inline-block w-40 h-1 rounded-full bg-indigo-500"
+						></span>
+						<span
+							class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"
+						></span>
+						<span
+							class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"
+						></span>
+					</div>
+				</div>
+				<div class="-mx-3 md:flex items-start">
+					{ [0, 1,2].map((index) => 
+					<div class="px-3 md:w-1/3">
+						{
+							testimonials?.map((item, i) => {
+								if((i+index) % 3 == 0)
+								return <div class="w-full mx-auto rounded-lg testimonial border  p-5 font-light mb-6">
+									<div class="w-full flex mb-4 items-center">
+										<div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+											<img
+												src={item.image}
+												alt=""
+											/>
+										</div>
+										<div class="flex-grow pl-3">
+											<h6 class="font-bold text-sm uppercase ">
+												{item.username}
+											</h6>
+										</div>
+									</div>
+									<div class="w-full">
+										<p class="text-sm leading-tight">
+											<span class="text-lg leading-none italic font-bold  mr-1">
+												"
+											</span>
+											{item.content}
+											<span class="text-lg leading-none italic font-bold text-gray-400 ml-1">
+												"
+											</span>
+										</p>
+									</div>
+								</div>;
+							})
+						}
+					</div>
+				)}
+				</div>
+			</div>
+		</section>
+	</div>
 </MySiteLayout>
 
 <style is:global>
 	html {
-		-webkit-tap-highlight-color: rgba(255,255,255,0);
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 		-webkit-tap-highlight-color: transparent;
 	}
 	*:focus {
-	outline: none !important;
-	
+		outline: none !important;
 	}
+</style>
 
-</style> 

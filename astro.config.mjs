@@ -1,25 +1,25 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import svelte from "@astrojs/svelte";
-import { astroImageTools } from "astro-imagetools";
+//import { astroImageTools } from "astro-imagetools";
 
 //import mdx from "@astrojs/mdx";
 
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
- 
-  integrations: [tailwind(), svelte(), /* mdx() */astroImageTools],
+  integrations: [tailwind(), svelte() /* mdx() astroImageTools */, mdx()],
   site: "https://vizibinu.github.io",
-  
   vite: {
     ssr: {
       noExternal: ['three', 'troika-three-text', 'geolib', '@fontsource/nunito', 'cube.gl', 'astro-seo'],
-      external: ["svgo"],
+      external: ["svgo"]
     }
-    
   },
   legacy: {
     astroFlavoredMarkdown: true
   }
+ 
+  
 });

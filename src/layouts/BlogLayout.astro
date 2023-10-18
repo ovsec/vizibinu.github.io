@@ -1,17 +1,18 @@
 ---
 import MySiteLayout from "./MySiteLayout.astro"
-
+const {frontmatter} = Astro.props;
 ---
 
 <MySiteLayout>
-    <div class=" prose prose-md  dark:prose-invert prose-p:text-zinc-400  min-w-fit mx-auto overflow-y-auto">
+    <div class=" prose prose-md prose-stone  dark:prose-invert prose-p:text-zinc-400  min-w-fit mx-auto overflow-y-auto
+    prose-h1:text-purple-400
+    
+    ">
         
-        <div class="space-y-2">
-            <div class="text-3xl font-bold">Title</div>
-            <time class="text-sm font-normal text-zinc-400">2022-12-12</time>
-            <h5>The current URL is: {Astro.url}</h5>
-            <h5>The current URL pathname is: {Astro.url.pathname}</h5>
-            <h5>The current URL origin is: {Astro.url.origin}</h5>
+        <div class="mb-4">
+            <h1>{frontmatter?.title}</h1>
+            <time class="text-sm font-normal text-zinc-400">{frontmatter?.publishDate}</time>
+            
         </div>
         <slot />
     </div>

@@ -11,11 +11,11 @@ image:
   src: "https://picsum.photos/seed/flag/800/800?blur"
   alt: "Space shuttle leaving curved trail in the sky. "
 tags: ["hello"]
-setup: |  
-  import FollowMe from "../../../components/FollowMe.astro"
+
 ---
 
-<img src="https://picsum.photos/seed/flag/800/800?blur" class="h-96 w-full rounded-md" />
+# Title
+
 ## Basics of Markdown
 Markdown is the most popular markup language that can be used to format documents. It can be used to create *websites*,*ebooks*,*email*,*chats in discussions forums*.
 
