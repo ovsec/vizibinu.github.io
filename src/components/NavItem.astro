@@ -1,0 +1,20 @@
+---
+import Icon from "astro-icon";
+import ActiveElementMarker from "./ActiveElementMarker.astro";
+// Usage: <GreetingHeadline greeting="Howdy" name="Partner" />
+
+interface Props {
+  text?: string;
+  path: string;
+  icon?: string;
+  isActive: boolean
+}
+
+const { text, path, icon, isActive=false } = Astro.props;
+---
+
+<a href={path} class=`nav-item ${isActive ? 'nav-item--active':null}`>
+    {text}
+    {isActive ? <ActiveElementMarker/> : null}
+    
+</a>

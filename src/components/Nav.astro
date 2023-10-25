@@ -1,6 +1,9 @@
 ---
 import Logo from "./Logo.astro"
 import { Icon } from 'astro-icon'
+import ThemeSwitch from "./ThemeSwitch.astro";
+import ActiveElementMarker from "./ActiveElementMarker.astro";
+import NavItem from "./NavItem.astro";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 const activeColor = "white"; //"green-600";
@@ -21,29 +24,25 @@ const activeColor = "white"; //"green-600";
 		
 		
 		
-		<div class="inline-flex gap-x-4 h-6 justify-between grow   text-zinc-700 transition-all  ">
-			<a href="/" class={`inline-flex hover:brightness-200 ${currentPath == "" ? `text-${activeColor}`: ""} `}>
-				<Icon class=""  name="akar-icons:home" />
-				
+		<div class="inline-flex gap-x-4 h-8 justify-between grow  transition-all  ">
+			
+			<NavItem icon="akar-icons:home" text="Home" path="/" isActive={pathname === "/"} />
+			<NavItem icon="akar-icons:edit" text="Blogs" path="/blogs" isActive={pathname === "/blogs"} />
+			<NavItem icon="akar-icons:bell" text="Notifications" path="/notifications" isActive={pathname === "/notifications"} />
+			
+			<a href="/" class="nav-item">
+				<Icon class="h-6" name="radix-icons:avatar" />
 			</a>
-			<a href="/blogs" class={`inline-flex hover:brightness-200 ${currentPath.indexOf("blogs") !== -1 ? `text-${activeColor}`: ""} `}>
-				<Icon  name="akar-icons:edit" />
-			</a>
-			<a href="/" class="inline-flex hover:brightness-200  ">
-				<Icon  name="akar-icons:bell" />
-			</a>
-			<a href="/" class="inline-flex hover:brightness-200 ">
-				<Icon  name="radix-icons:avatar" />
-			</a>
-			<a href="/" class=" hover:brightness-200 hidden md:inline-flex">
-				<Icon  name="carbon:overflow-menu-vertical" />
+			<a href="/" class="nav-item hidden md:inline-flex">
+				<Icon class="h-6" name="carbon:overflow-menu-vertical" />
 			</a>
 			<!-- <div class="relative group">
 				<div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-zinc-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 				<button class=" hover:saturate-200 drop-shadow-2xl -inset-0.5 shadow-2xl shadow-white hidden md:inline-flex" >{true ? "🌙" : "🌞"}</button> 
-			</div> -->
-			
-			
+			</div>
+			 
+			<ThemeSwitch />
+			-->
 		</div>
 		
 		
