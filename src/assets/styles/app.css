@@ -13,7 +13,7 @@
         @apply text-base text-zinc-600 dark:text-zinc-400
     }
     section {
-        @apply h-screen snap-center
+        @apply min-h-screen snap-center [&:not(:first-child)]:my-8
     }
 }
 
