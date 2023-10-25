@@ -20,19 +20,17 @@ const activeColor = "white"; //"green-600";
 
 		<div class="hidden md:block"><Logo/></div>
 		
-		<div class="flex grow md:grow-0 md:w-1/2  items-center">
+		<div class="flex grow md:grow-0 md:w-auto  items-center">
 		
 		
 		
-		<div class="inline-flex gap-x-4 h-8 justify-between grow  transition-all  ">
+		<div class="inline-flex gap-x-8 h-8 text-sm justify-between grow  transition-all  ">
 			
 			<NavItem icon="akar-icons:home" text="Home" path="/" isActive={pathname === "/"} />
 			<NavItem icon="akar-icons:edit" text="Blogs" path="/blogs" isActive={pathname === "/blogs"} />
 			<NavItem icon="akar-icons:bell" text="Notifications" path="/notifications" isActive={pathname === "/notifications"} />
 			
-			<a href="/" class="nav-item">
-				<Icon class="h-6" name="radix-icons:avatar" />
-			</a>
+			
 			<a href="/" class="nav-item hidden md:inline-flex">
 				<Icon class="h-6" name="carbon:overflow-menu-vertical" />
 			</a>

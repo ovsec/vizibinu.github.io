@@ -14,7 +14,9 @@ const { text, path, icon, isActive=false } = Astro.props;
 ---
 
 <a href={path} class=`nav-item ${isActive ? 'nav-item--active':null}`>
-    {text}
+    
+    {icon ? <Icon class="h-6 block md:hidden" name={icon} /> : null}
+    <span class="h-6 hidden md:block" >{text}</span>
     {isActive ? <ActiveElementMarker/> : null}
     
 </a>

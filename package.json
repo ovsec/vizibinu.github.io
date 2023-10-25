@@ -24,6 +24,7 @@
   "dependencies": {
     "@astrojs/mdx": "^0.6.0",
     "@fontsource/nunito": "^4.5.10",
+    "@supabase/supabase-js": "^2.38.3",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.2.7",
     "astro-seo": "^0.5.1"
