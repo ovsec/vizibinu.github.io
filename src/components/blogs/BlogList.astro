@@ -1,0 +1,33 @@
+---
+import { AstroInstance, MarkdownInstance } from "astro";
+
+import MySiteLayout from "../../layouts/MySiteLayout.astro"
+//import recentBlogs  from './api/recent_blogs.json'
+import BlogListItem from "./BlogListItem.astro";
+import { Frontmatter, sortDateDescending } from "../../lib/misc";
+
+const {limit} = Astro.props; 
+
+
+const mdBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../../**/*.md");
+
+    let recent = limit < 0 ? mdBlogs.length : limit;
+const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.values(mdBlogs))
+        .filter((ele:MarkdownInstance<Frontmatter> ) => ele.frontmatter.draft != true)
+        .slice(0, recent)
+console.log(mdBlogs.length, recentBlogs.length)
+---
+<div>
+
+    <div id="blog_filter">
+
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {
+        recentBlogs.map((blog, i) => {
+            return <BlogListItem description={blog.frontmatter.description} title={blog.frontmatter.title} url={blog.url} publishedDate={blog.frontmatter.publishedDate} />
+        })
+        
+        }
+    </div>
+</div>

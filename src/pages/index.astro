@@ -10,6 +10,7 @@ import mePhoto from "../assets/images/me.png";
 import testimonials from "../data/testimonials.json";
 import BlogListItem from "../components/blogs/BlogListItem.astro";
 import UserSubscriptionForm from "../components/UserSubscriptionForm.svelte";
+import BlogList from "../components/blogs/BlogList.astro";
 ---
 
 <MySiteLayout>
@@ -63,7 +64,8 @@ import UserSubscriptionForm from "../components/UserSubscriptionForm.svelte";
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</h3>
 			</div>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+			<BlogList limit={-1} />
+			<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 				<BlogListItem
 					title="Velit deserunt proident incididunt eiusmod."
 					url="#"
@@ -77,7 +79,7 @@ import UserSubscriptionForm from "../components/UserSubscriptionForm.svelte";
 				<BlogListItem
 					title="Velit deserunt proident incididunt eiusmod."
 				/>
-			</div>
+			</div> -->
 		</section>
 		
 		<section>

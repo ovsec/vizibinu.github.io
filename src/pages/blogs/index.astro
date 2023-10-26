@@ -1,49 +1,28 @@
 ---
-import Card from "../../components/Card.astro";
+
 import MySiteLayout from "../../layouts/MySiteLayout.astro"
-const unsortedPosts = await Astro.glob("./*/*.astro");
-const mdPosts = await Astro.glob("./*/*.md");
+import BlogList from "../../components/blogs/BlogList.astro";
 
 
-const series = await Astro.glob("./series/*/*/*.md")
-const allPosts = [ ...unsortedPosts, ...mdPosts]
+
+//const unsortedPosts:AstroInstance[] = await Astro.glob("./*/*.astro");
+//const mdPosts:MarkdownInstance<Record<string, any>>[] = await Astro.glob<Frontmatter>("./**/*.md");
+
+
+//const series:MarkdownInstance<Record<string, any>>[] = await Astro.glob("./series/*/*/*.md")
+//const allPosts:AstroComponent[] = [ ...unsortedPosts, ...mdPosts]
 ---
 
 <MySiteLayout>
 	
-	<div>{JSON.stringify(series)}</div>
-    <div class="space-y-4 ">
-    <h1 class="text-lg font-bold">All Blogs</h1>
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+	
+    <h1 class="text-lg font-bold my-3">All Blogs</h1>
+	<div class="grid grid-cols-1 gap-2">
 
-		{allPosts && allPosts?.map((p) => (
-						<Card
-							title={p?.frontmatter.title}
-							description={p?.frontmatter?.description}
-							publishDate={p?.frontmatter?.publishDate}
-							url={p.url}
-							image={p.frontmatter?.image}
-							tags={p.frontmatter?.tags}
-						/>
-					))}
-		
+		<BlogList limit={-1} />
 		
 	  </div>
-	  <div class="space-y-4">
-		<h2> Series </h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-			{series && series?.map((p) => (
-				<Card
-					title={p?.frontmatter.title}
-					description={p?.frontmatter?.description}
-					publishDate={p?.frontmatter?.publishDate}
-					url={p.url}
-					image={p.frontmatter?.image}
-					tags={p.frontmatter?.tags}
-				/>
-			))}
-		</div>
-	  </div>
+	 
 	  
     </div>
 	
