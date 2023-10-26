@@ -3,7 +3,7 @@
     let loading = false
     let email = ''
     let err = ''
-    
+    let msg = ''
     const handleSubscription= async () => {
     try {
       loading = true
@@ -19,11 +19,11 @@
         throw error;
       }
         //throw error
-      console.log(data)
-      alert('Success!')
+      msg = 'Successfully added to the subscription list.'
+      
     } catch (error) {
       if (error instanceof Error) {
-        alert(error.message)
+        err = error.message;
       }
     } finally {
       loading = false
@@ -70,4 +70,5 @@
         </button>
     </div>
     <span class="text-red-500 text-sm">{err}</span>
+    <span class="text-teal-500 text-sm delay-[5000ms] ease-out">{msg}</span>
 </form>

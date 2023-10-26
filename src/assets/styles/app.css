@@ -13,7 +13,7 @@
         @apply text-base text-zinc-600 dark:text-zinc-400
     }
     section {
-        @apply min-h-screen snap-center [&:not(:first-child)]:my-8
+        @apply min-h-screen  [&:not(:first-child)]:my-8 py-8 my-auto
     }
 }
 
@@ -21,7 +21,7 @@
 
 @layer components {
     .testimonial {
-        @apply bg-neutral-200 text-neutral-900 border-neutral-200 dark:bg-neutral-800 dark:text-neutral-50 dark:border-neutral-700;
+        @apply bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-800;
     }
     .nav-item {
         @apply relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400

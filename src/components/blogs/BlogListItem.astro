@@ -10,7 +10,7 @@ interface Props {
 const {title, category, tags, description, url} = Astro.props;
 
 ---
-<article class="group relative flex flex-col items-start">
+<article class="group relative flex flex-col items-start p-2">
     <h2
         class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
     >
@@ -33,7 +33,7 @@ const {title, category, tags, description, url} = Astro.props;
             ><span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"
             ></span></span
         >September 5, 2022</time
-    ><p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    ><p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2">
         Most companies try to stay ahead of the curve when it comes to visual
         design, but for Planetaria we needed to create a brand that would still
         inspire us 100 years from now when humanity has spread across our entire
