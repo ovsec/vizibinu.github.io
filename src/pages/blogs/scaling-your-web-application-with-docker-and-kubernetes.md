@@ -75,7 +75,7 @@ Build the Docker image and test it locally. Once you are satisfied with the cont
 ## 5. Deploying Containers to Kubernetes
 Kubernetes uses YAML manifests to define and manage application deployments. You will need to create several YAML files to describe your application, such as Deployments, Services, and ConfigMaps. Here's a basic example of a Deployment YAML:
 
-```YAML
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -99,7 +99,7 @@ spec:
 ## 6. Scaling Your Web Application
 One of the key benefits of Kubernetes is its ability to scale applications seamlessly. You can manually adjust the number of application instances, or Kubernetes can autoscale based on CPU or memory usage. For manual scaling, you can use the kubectl command:
 
-```BASH
+```bash
 kubectl scale deployment webapp-deployment --replicas=5
 ```
 
