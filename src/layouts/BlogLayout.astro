@@ -1,23 +1,28 @@
 ---
+import BlogList from "../components/blogs/BlogList.astro";
 import MySiteLayout from "./MySiteLayout.astro"
 const {frontmatter} = Astro.props;
 
 ---
 
 <MySiteLayout>
-    <div class="prose md:prose-md prose-stone dark:prose-invert prose-p:text-neutral-800 dark:prose-p:text-neutral-200 ">
+    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4">
+        <div class="prose md:prose-md prose-zinc dark:prose-invert ">
         
-        <div class="mb-2">
-            <time class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-        datetime={frontmatter.publishedDate}>
+            <div class="mb-2">
+                <time class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
+            datetime={frontmatter.publishedDate}>
                 <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
                     <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
                 </span>
-            {frontmatter.publishedDate}
-        </time>
-            
-            
+                {frontmatter.publishedDate}
+                </time>
+    
+            </div>
+            <slot />
         </div>
-        <slot />
+        
+        <BlogList limit={2} />
+        
     </div>
 </MySiteLayout>

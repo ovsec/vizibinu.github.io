@@ -19,7 +19,7 @@ draft: false
 
 In today's fast-paced digital landscape, the ability to efficiently scale web applications is crucial for ensuring optimal performance and handling increased traffic. Docker and Kubernetes have emerged as powerful tools for managing containerized applications and orchestrating their deployment at scale.
 
-<!-- ![Architecture Diagram](Image_URL) Insert an image URL showing the architecture diagram here -->
+![Architecture Diagram](../../assets/blogs/scaling-your-web-application-with-docker-and-kubernetes/diagram1.svg) <!-- Insert an image URL showing the architecture diagram here -->
 
 ## Table of Contents
 
