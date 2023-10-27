@@ -1,23 +1,30 @@
 ---
 // Component Imports
 //import Button from "../components/Button.astro";
-import '@fontsource/nunito';
-import "../assets/styles/app.css"
+import "@fontsource/nunito";
+import "../assets/styles/app.css";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en" class="dark">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/images/loading-svgrepo-com.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
-    <meta name="theme-color" content="black" media="(prefers-color-scheme: dark)">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/loading-svgrepo-com.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="black"
+      media="(prefers-color-scheme: dark)"
+    />
 
     <title>Abhishek's Blog</title>
     <!-- <script is:inline>
@@ -36,28 +43,40 @@ import { ViewTransitions } from 'astro:transitions';
           document.documentElement.classList.add("dark");
         }
         window.localStorage.setItem("theme", theme);
-      </script> -->   
-      <ViewTransitions />
-</head>
+      </script> -->
+    <script is:inline
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-E5F9F2L4ZP"
+    ></script>
+    <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-E5F9F2L4ZP");
+    </script>
+    <ViewTransitions />
+  </head>
 
-<body  >
-    
+  <body>
     <div
-        class="w-full min-h-screen overflow-y-auto body-font font-nunito font-medium antialiased
-        flex flex-col ">
-        
-        <div class="mx-auto w-1/2 h-1/4 rotate-12 translate-x-1/4 -translate-y-1/2 animate-tilt transition group-hover:duration-200 duration-500 group-hover:opacity-100 opacity-70 fixed rounded-lg -inset-0.5 bg-gradient-to-r from-green-300 via-indigo-700 to-pink-500 filter blur-3xl"></div>
+      class="w-full min-h-screen overflow-y-auto body-font font-nunito font-medium antialiased
+        flex flex-col"
+    >
+      <div
+        class="mx-auto w-1/2 h-1/4 rotate-12 translate-x-1/4 -translate-y-1/2 animate-tilt transition group-hover:duration-200 duration-500 group-hover:opacity-100 opacity-70 fixed rounded-lg -inset-0.5 bg-gradient-to-r from-green-300 via-indigo-700 to-pink-500 filter blur-3xl"
+      >
+      </div>
 
-<!--   bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-zinc-100   -->
-        <Nav />
-        <div
-            class="flex-grow container max-w-5xl  mx-auto grid grid-cols-1  p-4 sm:p-8 relative overflow-x-hidden  overflow-y-auto">
-            
-            <slot />
-            
-        </div>
-        <Footer  />
+      <!--   bg-white  dark:bg-black bg-gradient-to-r dark:from-[#111] dark:to-[#151515] text-gray-900 dark:text-zinc-100   -->
+      <Nav />
+      <div
+        class="flex-grow container max-w-5xl mx-auto grid grid-cols-1 p-4 sm:p-8 relative overflow-x-hidden overflow-y-auto"
+      >
+        <slot />
+      </div>
+      <Footer />
     </div>
-</body>
-
+  </body>
 </html>
