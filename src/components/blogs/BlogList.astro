@@ -11,10 +11,10 @@ const {limit} = Astro.props;
 
 const mdBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../../**/*.md");
 
-    let recent = limit < 0 ? mdBlogs.length : limit;
+let count = limit && limit > 0 ? limit : mdBlogs.length;
 const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.values(mdBlogs))
         .filter((ele:MarkdownInstance<Frontmatter> ) => ele.frontmatter.draft != true)
-        .slice(0, recent)
+        .slice(0, count)
 
 ---
 <div class="@container/blogs">
@@ -22,7 +22,7 @@ const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.va
     <div id="blog_filter" >
         
     </div>
-    <div class="grid grid-cols-1 @md/blogs:grid-cols-2  gap-3">
+    <div class="grid grid-cols-1 @xl/blogs:grid-cols-2   gap-3">
         {
         recentBlogs.map((blog, i) => {
             return <BlogListItem description={blog.frontmatter.description} title={blog.frontmatter.title} url={blog.url} publishedDate={blog.frontmatter.publishedDate} />
