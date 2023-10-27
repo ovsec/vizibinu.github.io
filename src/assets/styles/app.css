@@ -2,7 +2,7 @@
 
 @layer base {
     html {
-        @apply text-zinc-800 bg-zinc-50 ctp-latte;
+        @apply text-zinc-900 bg-zinc-50 ;
     }
 
     html.dark {
@@ -10,7 +10,7 @@
     }
 
     p {
-        @apply text-base text-zinc-600 dark:text-zinc-400
+        @apply text-base text-zinc-800 dark:text-zinc-400
     }
     section {
         @apply min-h-screen  [&:not(:first-child)]:my-8 py-8 my-auto
@@ -24,10 +24,10 @@
         @apply bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-800;
     }
     .nav-item {
-        @apply relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400
+        @apply relative block px-3 py-2 transition uppercase font-medium tracking-wider
     }
     .nav-item--active {
-        @apply text-teal-500 dark:text-teal-400
+        @apply  font-bold tracking-wider
     }
 
     

@@ -20,7 +20,7 @@ const { title, category, tags, description, url, publishedDate } = Astro.props;
         </div><a href=`${url}`
             ><span
                 class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
-            ></span><span class="relative z-10">{title}</span></a
+            ></span><span class="relative z-10 line-clamp-1 md:line-clamp-2">{title}</span></a
         >
     </h2><time
         class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
@@ -32,12 +32,12 @@ const { title, category, tags, description, url, publishedDate } = Astro.props;
             ></span></span
         >{publishedDate}</time
     ><p
-        class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2"
+        class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-1 md:line-clamp-2 "
     >
         {description}
     </p><div
         aria-hidden="true"
-        class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+        class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500 group-hover:underline"
     >
         Read article<svg
             viewBox="0 0 16 16"
