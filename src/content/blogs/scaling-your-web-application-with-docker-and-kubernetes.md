@@ -1,8 +1,8 @@
 ---
-layout: "../../layouts/BlogLayout.astro"
+#layout: "../../layouts/BlogLayout.astro"
 title: "Scaling Your Web Application with Docker and Kubernetes"
 description: "The ability to efficiently scale web applications is crucial for ensuring optimal performance and handling increased traffic. Docker and Kubernetes have emerged as powerful tools for managing containerized applications and orchestrating their deployment at scale"
-publishedDate: "26 Oct 2023"
+publishDate: 2023-10-27 09:44:16
 followMe:
   username: "MrAbhisheksaha"
   href: "https://twitter.com/MrAbhisheksaha"

@@ -29,6 +29,8 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.2.7",
-    "astro-seo": "^0.5.1"
+    "astro-seo": "^0.5.1",
+    "dayjs": "^1.11.10",
+    "fuse.js": "^7.0.0"
   }
 }

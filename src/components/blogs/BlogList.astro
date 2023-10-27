@@ -1,20 +1,21 @@
 ---
 import { AstroInstance, MarkdownInstance } from "astro";
-
+import { getCollection } from 'astro:content';
 import MySiteLayout from "../../layouts/MySiteLayout.astro"
 //import recentBlogs  from './api/recent_blogs.json'
-import BlogListItem from "./BlogListItem.astro";
+import BlogListItem from "./BlogListItem.svelte";
 import { Frontmatter, sortDateDescending } from "../../lib/misc";
 
 const {limit} = Astro.props; 
 
 
-const mdBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../../**/*.md");
+//const mdBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../../**/*.md");
 
-let count = limit && limit > 0 ? limit : mdBlogs.length;
-const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.values(mdBlogs))
-        .filter((ele:MarkdownInstance<Frontmatter> ) => ele.frontmatter.draft != true)
-        .slice(0, count)
+//let count = limit && limit > 0 ? limit : mdBlogs.length;
+//const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.values(mdBlogs))
+//        .filter((ele:MarkdownInstance<Frontmatter> ) => ele.frontmatter.draft != true)
+//        .slice(0, count)
+const blogEntries = await getCollection('blogs');
 
 ---
 <div class="@container/blogs">
@@ -24,8 +25,8 @@ const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.va
     </div>
     <div class="grid grid-cols-1 @xl/blogs:grid-cols-2   gap-3">
         {
-        recentBlogs.map((blog, i) => {
-            return <BlogListItem description={blog.frontmatter.description} title={blog.frontmatter.title} url={blog.url} publishedDate={blog.frontmatter.publishedDate} />
+        blogEntries.map((blog, i) => {
+            return <BlogListItem description={blog.data?.description} title={blog.data.title} url={`/blogs/${blog.slug}`} publishDate={blog.data.publishDate.toDateString()} tags={blog.data.tags} read={true}/>
         })
         
         }
