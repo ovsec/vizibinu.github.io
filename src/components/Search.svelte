@@ -6,7 +6,7 @@ import Fuse from 'fuse.js';
 
 
 export let list= [];
-
+export let search = '';
 const options = {
 	keys: ['data.title', 'data.description', 'slug'],
 	includeMatches: true,
@@ -16,18 +16,19 @@ const options = {
 
 const fuse = new Fuse(list, options);
 
-let search=''
+//let search=''
 
 $: blogs = fuse
 		.search(search)
 		.map((result) => result.item)
 		.slice(0, 5);
-        
+console.log("Searching for ", search)        
 </script>
 
 <div class="">
     
         <input
+            
             bind:value={search}
             type="search"
             placeholder="Start typing to search blogs..."
@@ -38,9 +39,9 @@ $: blogs = fuse
         />
     
     <div>
-        <ul class="flex flex-col gap-2">
+        <ul class="flex flex-col gap-2 bg-zinc-950 rounded-b-md">
             {#each blogs as blog, i }
-            <li>
+            <li class="hover:bg-zinc-900 py-1">
                 <a href={`${blog.slug}`}>
                     
                     <!-- svelte-ignore missing-declaration -->

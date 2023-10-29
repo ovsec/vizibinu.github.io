@@ -1,5 +1,5 @@
 {
-  "name": "data_viz_abhishek",
+  "name": "abhisheksaha",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "@astrojs/svelte": "^4.0.3",
     "@astrojs/tailwind": "^5.0.2",
     "@catppuccin/tailwindcss": "^0.1.6",
-    "@tailwindcss/line-clamp": "^0.4.0",
+   
     "@tailwindcss/typography": "^0.5.4",
     "astro": "^3.3.1",
     "autoprefixer": "^10.4.7",

@@ -1,29 +1,14 @@
 ---
 
-import MySiteLayout from "../../layouts/MySiteLayout.astro"
-import BlogList from "../../components/blogs/BlogList.astro";
+import MySiteLayout from "@layouts/MySiteLayout.astro"
+import BlogList from "@components/blogs/BlogList.astro";
 
-
-
-//const unsortedPosts:AstroInstance[] = await Astro.glob("./*/*.astro");
-//const mdPosts:MarkdownInstance<Record<string, any>>[] = await Astro.glob<Frontmatter>("./**/*.md");
-
-
-//const series:MarkdownInstance<Record<string, any>>[] = await Astro.glob("./series/*/*/*.md")
-//const allPosts:AstroComponent[] = [ ...unsortedPosts, ...mdPosts]
 ---
 
 <MySiteLayout>
-	
-	
     <h1 class="text-lg font-bold my-3">All Blogs</h1>
 	<div class="grid grid-cols-1 gap-2">
-
 		<BlogList limit={-1} />
-		
-	  </div>
-	 
-	  
+	  </div>  
     </div>
-	
 </MySiteLayout>

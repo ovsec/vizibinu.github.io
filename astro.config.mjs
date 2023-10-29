@@ -2,22 +2,20 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import svelte from "@astrojs/svelte";
 import partytown from "@astrojs/partytown";
-
-//import { astroImageTools } from "astro-imagetools";
-
-//import mdx from "@astrojs/mdx";
-
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte() /* mdx() astroImageTools */, mdx(),
-  partytown({
-    // Adds dataLayer.push as a forwarding-event.
-    config: {
-      forward: ["dataLayer.push"],
-    },
-  })
+  integrations: [
+    tailwind(), 
+    svelte() /* mdx() astroImageTools */, 
+    mdx(),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    })
 ],
   site: "https://vizibinu.github.io",
   vite: {
@@ -26,9 +24,7 @@ export default defineConfig({
       external: ["svgo"]
     }
   },
-  legacy: {
-    astroFlavoredMarkdown: true
-  }
+  
  
   
 });

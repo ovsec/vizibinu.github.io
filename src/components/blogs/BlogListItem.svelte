@@ -43,7 +43,7 @@ export let description:string = null;
     {#if tags}
     <div class="flex gap-1">
         {#each tags as tag, i}
-            <a href="#" class=" px-2 py-1 items-center justify-center bg-teal-600 text-xs rounded-full">{`#${tag}`}</a>
+            <a href={`/search?search=${tag}`} class=" px-2 py-1 items-center justify-center bg-teal-600 text-xs rounded-full">{`#${tag}`}</a>
         
         {/each}
     </div>

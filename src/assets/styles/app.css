@@ -35,3 +35,28 @@
 }
 
 @tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(148, 226, 213, 0.7);
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(148, 226, 213);
+}
+
+*:focus {
+    outline: none !important;
+}

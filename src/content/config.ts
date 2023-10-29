@@ -1,4 +1,5 @@
 // 1. Import utilities from `astro:content`
+import { string } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 
 
@@ -13,8 +14,12 @@ const blogCollection = defineCollection({
       publishDate: z.date()
     }),
   });
+
+//TODO: Add testimonials as collections 
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'blogs': blogCollection,
+  
 };

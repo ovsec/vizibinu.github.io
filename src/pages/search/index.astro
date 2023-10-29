@@ -1,18 +1,17 @@
 ---
-import { MarkdownInstance } from 'astro';
-import Search from '../../components/Search.svelte'
-import MySiteLayout from '../../layouts/MySiteLayout.astro';
-import { Frontmatter } from '../../lib/misc';
-import { getCollection, getEntry } from 'astro:content';
-//const allBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob('../blogs/**/*.{md,mdx}');
-//const blogs:MarkdownInstance<Frontmatter>[] = allBlogs.filter((blog) => !blog.frontmatter.draft);
+import Search from "@components/Search.svelte";
+import MySiteLayout from "@layouts/MySiteLayout.astro";
 
-const allBlogPosts = await getCollection('blogs');
-const searchBarProps = { // make sure all required component's inputs/Props keys&types match
-    list: allBlogPosts
-}
+import { getCollection, getEntry } from "astro:content";
+
+const blogEntries = await getCollection("blogs");
+
+const searchBarProps = {
+    // make sure all required component's inputs/Props keys&types match
+    list: blogEntries,
+};
 ---
 
 <MySiteLayout>
-    <Search {...searchBarProps} client:load />
+    <Search {...searchBarProps} search={""} client:load />
 </MySiteLayout>

@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+
+const blogEntries = await getCollection('blogs');
+let tags = [];
+blogEntries.map((blog) => {
+    tags = [...tags, ...blog.data.tags]
+})
+tags = [...new Set(tags)]
+---
+<ul class="flex gap-2">
+    {tags.map((tag) => {
+        return <a href={`/search/${tag}`} class=" px-2 py-1 items-center justify-center bg-zinc-800 text-xs rounded-full">{`#${tag}`}</a>
+    })}
+</ul>

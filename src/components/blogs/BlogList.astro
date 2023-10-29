@@ -6,16 +6,8 @@ import MySiteLayout from "../../layouts/MySiteLayout.astro"
 import BlogListItem from "./BlogListItem.svelte";
 import { Frontmatter, sortDateDescending } from "../../lib/misc";
 
-const {limit} = Astro.props; 
 
-
-//const mdBlogs:MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../../**/*.md");
-
-//let count = limit && limit > 0 ? limit : mdBlogs.length;
-//const recentBlogs:MarkdownInstance<Frontmatter>[] = sortDateDescending(Object.values(mdBlogs))
-//        .filter((ele:MarkdownInstance<Frontmatter> ) => ele.frontmatter.draft != true)
-//        .slice(0, count)
-const blogEntries = await getCollection('blogs');
+export let blogEntries = await getCollection('blogs');
 
 ---
 <div class="@container/blogs">
@@ -23,7 +15,7 @@ const blogEntries = await getCollection('blogs');
     <div id="blog_filter" >
         
     </div>
-    <div class="grid grid-cols-1 @xl/blogs:grid-cols-2   gap-3">
+    <div class="grid grid-cols-1 @2xl/blogs:grid-cols-2   gap-3">
         {
         blogEntries.map((blog, i) => {
             return <BlogListItem description={blog.data?.description} title={blog.data.title} url={`/blogs/${blog.slug}`} publishDate={blog.data.publishDate.toDateString()} tags={blog.data.tags} read={true}/>

@@ -1,16 +1,17 @@
 ---
-import MySiteLayout from "../layouts/MySiteLayout.astro";
+import MySiteLayout from "@layouts/MySiteLayout.astro";
 
-import Avatar from "../components/Avatar.astro";
+import Avatar from "@components/Avatar.astro";
 
 import { Icon } from "astro-icon";
 
-import mePhoto from "../assets/images/me.png";
+
 
 import testimonials from "../data/testimonials.json";
-import BlogListItem from "../components/blogs/BlogListItem.svelte";
-import UserSubscriptionForm from "../components/UserSubscriptionForm.svelte";
-import BlogList from "../components/blogs/BlogList.astro";
+
+import UserSubscriptionForm from "@components/UserSubscriptionForm.svelte";
+import BlogList from "@components/blogs/BlogList.astro";
+import Tags from "@components/Tags.astro";
 ---
 
 <MySiteLayout>
@@ -42,7 +43,7 @@ import BlogList from "../components/blogs/BlogList.astro";
 				<div class="flex gap-4 items-center justify-center md:justify-normal">
 					<a class="group px-4 py-2 gap-2 inline-flex items-center text-center rounded-md hover:scale-105 hover:-translate-y-0.5 transition-all bg-indigo-600 hover:bg-indigo-500"
 					download="" href="/sample_cv_not_complete.pdf"> 
-					<span class="inline-flex gap-1">
+					<span class="inline-flex gap-1 shrink-0">
 						<span class="hidden md:block">Download </span>
 						<span class="md:lowercase">My resume</span>
 					</span>
@@ -54,13 +55,14 @@ import BlogList from "../components/blogs/BlogList.astro";
 						class="inline-flex items-center gap-2 rounded-md px-4 py-2 hover:border-transparent hover:-translate-y-0.5 hover:scale-105 transition-all dark:bg-zinc-900 dark:hover:bg-zinc-800"
 					>
 						
-						<span class="inline-flex gap-1">
+						<span class="inline-flex shrink-0 gap-1">
 							<span class="hidden md:block">See</span>
 							<span class="md:lowercase">My blogs</span>
 						</span>
 						<Icon name="ion:bar-chart-outline" class="w-4 h-4" />
 					</a>
 				</div>
+				<Tags />
 			</div>
 		</section>
 		
@@ -73,6 +75,7 @@ import BlogList from "../components/blogs/BlogList.astro";
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</h3>
 			</div>
+			
 			<BlogList limit={4} />
 			<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 				<BlogListItem
@@ -90,6 +93,7 @@ import BlogList from "../components/blogs/BlogList.astro";
 				/>
 			</div> -->
 		</section>
+	
 		
 		<section>
 			<div class="text-center mb-12">
@@ -232,12 +236,4 @@ import BlogList from "../components/blogs/BlogList.astro";
 	</div>
 </MySiteLayout>
 
-<style is:global>
-	html {
-		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-		-webkit-tap-highlight-color: transparent;
-	}
-	*:focus {
-		outline: none !important;
-	}
-</style>
+

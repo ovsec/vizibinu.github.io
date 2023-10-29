@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blogs": {
+"scaling-your-web-application-with-docker-and-kubernetes copy.md": {
+	id: "scaling-your-web-application-with-docker-and-kubernetes copy.md";
+  slug: "scaling-your-web-application-with-docker-and-kubernetes-copy";
+  body: string;
+  collection: "blogs";
+  data: InferEntrySchema<"blogs">
+} & { render(): Render[".md"] };
 "scaling-your-web-application-with-docker-and-kubernetes.md": {
 	id: "scaling-your-web-application-with-docker-and-kubernetes.md";
   slug: "scaling-your-web-application-with-docker-and-kubernetes";
