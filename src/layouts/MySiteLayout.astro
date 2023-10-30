@@ -3,11 +3,36 @@
 //import Button from "../components/Button.astro";
 import "@fontsource/nunito";
 import "../assets/styles/app.css";
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
+import Footer from "@components/Footer.astro";
+import Nav from "@components/Nav.astro";
 import { ViewTransitions } from "astro:transitions";
+import { SITE_CONFIG } from "@lib/constants";
+import Analytics from '@components/Analytics/Analytics.astro'
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+
+export interface Props {
+  title: string;
+  ogImageUrl?: string;
+  author?: object;
+  // This isn't used anywhere except for the sponsor event labels
+  //briefTitle?: string;
+  //redirectUrl?: string;
+  description?: string;
+  keywords?: string[];
+  //noIndex?: boolean;
+  canonicalUrl?: string;
+  initialLoadingMessage?: string;
+  permalink?: string;
+}
+
+const {
+  title = SITE_CONFIG.title,
+  description = SITE_CONFIG.description,
+  //ogImageUrl = 'https://roadmap.sh/images/og-img.png',
+  keywords = SITE_CONFIG.keywords,
+  author
+} = Astro.props;
 ---
 
 <html lang="en" class="dark">
@@ -18,7 +43,10 @@ import { ViewTransitions } from "astro:transitions";
       type="image/x-icon"
       href="/images/loading-svgrepo-com.svg"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name='viewport'
+      content='width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0'
+    />
     <meta name="color-scheme" content="dark light" />
     <meta
       name="theme-color"
@@ -26,7 +54,26 @@ import { ViewTransitions } from "astro:transitions";
       media="(prefers-color-scheme: dark)"
     />
 
-    <title>Abhishek's Blog</title>
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    
+    <meta name='keywords' content={keywords.join(', ')} />
+
+
+
+    <meta name='mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta
+      name='apple-mobile-web-app-status-bar-style'
+      content='black-translucent'
+    />
+    <meta name='apple-mobile-web-app-title' content='abhisheksaha.xyz' />
+    <meta name='application-name' content='abhisheksaha.xyz' />
+
+
+    <meta name='msapplication-TileColor' content='#101010' />
+    <meta name='theme-color' content='#111' />
+
     <!-- <script is:inline>
         const theme = (() => {
           if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -44,7 +91,7 @@ import { ViewTransitions } from "astro:transitions";
         }
         window.localStorage.setItem("theme", theme);
       </script> -->
-    <script is:inline
+    <!-- <script is:inline
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-E5F9F2L4ZP"
     ></script>
@@ -55,7 +102,7 @@ import { ViewTransitions } from "astro:transitions";
       }
       gtag("js", new Date());
       gtag("config", "G-E5F9F2L4ZP");
-    </script>
+    </script> -->
     <ViewTransitions />
   </head>
 
@@ -78,5 +125,6 @@ import { ViewTransitions } from "astro:transitions";
       </div>
       <Footer />
     </div>
+    <Analytics />
   </body>
 </html>

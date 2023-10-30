@@ -3,14 +3,13 @@
 title: "Scaling Your Web Application with Docker and Kubernetes"
 description: "The ability to efficiently scale web applications is crucial for ensuring optimal performance and handling increased traffic. Docker and Kubernetes have emerged as powerful tools for managing containerized applications and orchestrating their deployment at scale"
 publishDate: 2023-10-27 09:44:16
-followMe:
-  username: "MrAbhisheksaha"
-  href: "https://twitter.com/MrAbhisheksaha"
-halfTheMeaning: 21
 image:
   src: "https://picsum.photos/seed/flag/800/800?blur"
   alt: "Space shuttle leaving curved trail in the sky. "
 tags: ["webapp", "docker", "kubernetes"]
+author: abhishek-saha
+relatedBlogs:
+  - fullstack-dev-roadmap
 draft: false
 ---
 

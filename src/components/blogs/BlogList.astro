@@ -1,14 +1,16 @@
 ---
-import { AstroInstance, MarkdownInstance } from "astro";
+
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import MySiteLayout from "../../layouts/MySiteLayout.astro"
-//import recentBlogs  from './api/recent_blogs.json'
 import BlogListItem from "./BlogListItem.svelte";
-import { Frontmatter, sortDateDescending } from "../../lib/misc";
 
 
-export let blogEntries = await getCollection('blogs');
-
+interface Props {
+  blogs: CollectionEntry<'blogs'>[];
+}
+//export let blogEntries; // = await getCollection('blogs');
+const {blogs = await getCollection('blogs')}= Astro.props
 ---
 <div class="@container/blogs">
 
@@ -17,8 +19,8 @@ export let blogEntries = await getCollection('blogs');
     </div>
     <div class="grid grid-cols-1 @2xl/blogs:grid-cols-2   gap-3">
         {
-        blogEntries.map((blog, i) => {
-            return <BlogListItem description={blog.data?.description} title={blog.data.title} url={`/blogs/${blog.slug}`} publishDate={blog.data.publishDate.toDateString()} tags={blog.data.tags} read={true}/>
+        blogs && blogs.map((blog, i) => {
+            return <BlogListItem {blog}/>
         })
         
         }

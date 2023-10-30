@@ -2,10 +2,11 @@
 
 import MySiteLayout from "@layouts/MySiteLayout.astro"
 import BlogList from "@components/blogs/BlogList.astro";
+import { SITE_NAME } from "@lib/constants";
 
 ---
 
-<MySiteLayout>
+<MySiteLayout title={`Blogs - ${SITE_NAME}`}>
     <h1 class="text-lg font-bold my-3">All Blogs</h1>
 	<div class="grid grid-cols-1 gap-2">
 		<BlogList limit={-1} />

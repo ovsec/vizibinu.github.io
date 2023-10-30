@@ -1,6 +1,7 @@
 ---
 import Search from "@components/Search.svelte";
 import MySiteLayout from "@layouts/MySiteLayout.astro";
+import { SITE_NAME } from "@lib/constants";
 
 import { getCollection, getEntry } from "astro:content";
 
@@ -12,6 +13,6 @@ const searchBarProps = {
 };
 ---
 
-<MySiteLayout>
-    <Search {...searchBarProps} search={""} client:load />
+<MySiteLayout title={`Blogs - ${SITE_NAME}`} >
+    <Search {...searchBarProps}  client:load />
 </MySiteLayout>

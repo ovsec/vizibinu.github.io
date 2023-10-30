@@ -1,31 +1,23 @@
 <script lang="ts">
-
+import type { CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(relativeTime)
 
 interface $$Props {
-    title: string;
-    category?: string;
-    tags?: string[];
-    description?: string;
-    url: string;
-    publishDate: string;
-    read: boolean
+    blog:CollectionEntry<'blogs'>
 }
-export let title:string;
-export let url:string;
-export let tags:string[] = null;
-export let publishDate:string;
-export let description:string = null;
+
+export let blog:CollectionEntry<'blogs'> ;
+const {slug, data : {title, publishDate, description, tags} = {}} = blog;
 </script>
 
 <article class="group relative flex flex-col items-start p-2">
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
         <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl">
         </div>
-        <a href={`${url}`}>
+        <a href={`/blogs/${slug}`}>
             <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
             <span class="relative z-10 line-clamp-1 md:line-clamp-2">{title}</span>
             </a>

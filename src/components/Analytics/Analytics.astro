@@ -1,0 +1,18 @@
+---
+import {GOOGLE_ANALYTICS} from '../../lib/constants'
+---
+
+<script src='./analytics.ts'></script>
+<script type="text/partytown" async src='https://www.googletagmanager.com/gtag/js?id='+ GOOGLE_ANALYTICS
+></script>
+<script type="text/partytown" is:inline>
+  // @ts-nocheck
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ANALYTICS);
+</script>

@@ -175,9 +175,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blogs": {
-"scaling-your-web-application-with-docker-and-kubernetes copy.md": {
-	id: "scaling-your-web-application-with-docker-and-kubernetes copy.md";
-  slug: "scaling-your-web-application-with-docker-and-kubernetes-copy";
+"fullstack-dev-roadmap.md": {
+	id: "fullstack-dev-roadmap.md";
+  slug: "fullstack-dev-roadmap";
   body: string;
   collection: "blogs";
   data: InferEntrySchema<"blogs">
@@ -194,7 +194,14 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"authors": {
+"abhishek-saha": {
+	id: "abhishek-saha";
+  collection: "authors";
+  data: InferEntrySchema<"authors">
+};
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

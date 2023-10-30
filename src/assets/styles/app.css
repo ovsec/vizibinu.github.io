@@ -48,13 +48,13 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(148, 226, 213, 0.7);
+    background: rgb(203, 166, 247, 0.3);
     border-radius: 5px;
 }
  
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(148, 226, 213);
+    background: rgb(203, 166, 247, 0.7);
 }
 
 *:focus {
