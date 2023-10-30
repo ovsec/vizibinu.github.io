@@ -7,7 +7,6 @@ import { Icon } from "astro-icon";
 import { Image } from 'astro:assets';
 import myImage from "@assets/images/me.jpg";
 
-
 import testimonials from "../data/testimonials.json";
 
 import UserSubscriptionForm from "@components/UserSubscriptionForm.svelte";
@@ -24,7 +23,7 @@ import { SITE_NAME } from "@lib/constants";
 				class="place-self-center md:place-self-auto md:order-last md:blur-0 w-1/2 md:w-full"
 			>
 				<img
-					src={myImage}
+					src="./images/me.jpg"
 					alt="Profile pic of Abhishek Saha"
 					loading="lazy"
 					decoding="async"
