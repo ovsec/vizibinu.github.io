@@ -1,7 +1,11 @@
 ---
-import MySiteLayout from "../layouts/MySiteLayout.astro";
+import { SITE_NAME } from "@lib/constants";
+import MySiteLayout from "@layouts/MySiteLayout.astro";
 
 ---
-<MySiteLayout>
+<MySiteLayout title={`Projects - ${SITE_NAME}`}>
     <h1 class="text-lg font-bold my-3">Projects</h1>
+    <p>
+        In progress...
+    </p>
 </MySiteLayout>

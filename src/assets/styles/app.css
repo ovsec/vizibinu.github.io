@@ -1,62 +1,59 @@
 @tailwind base;
 
 @layer base {
-    html {
-        @apply text-zinc-900 bg-zinc-50 ;
-    }
+	html {
+		@apply text-zinc-900 bg-zinc-50;
+	}
 
-    html.dark {
-        @apply text-zinc-100 bg-black ;
-    }
+	html.dark {
+		@apply text-zinc-100 bg-black;
+	}
 
-    p {
-        @apply text-base text-zinc-800 dark:text-zinc-400
-    }
-    section {
-        @apply min-h-screen  [&:not(:first-child)]:my-8 py-8 my-auto
-    }
+	p {
+		@apply text-base text-zinc-800 dark:text-zinc-400;
+	}
+	section {
+		@apply min-h-screen  [&:not(:first-child)]:my-8 py-8 my-auto;
+	}
 }
 
 @tailwind components;
 
 @layer components {
-    .testimonial {
-        @apply bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-800;
-    }
-    .nav-item {
-        @apply relative block px-3 py-2 transition uppercase font-medium tracking-wider
-    }
-    .nav-item--active {
-        @apply  font-bold tracking-wider
-    }
-
-    
-
+	.testimonial {
+		@apply bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-800;
+	}
+	.nav-item {
+		@apply relative block px-3 py-2 transition uppercase font-medium tracking-wider hover:text-ctp-mauve/60 text-ctp-mauve/90 drop-shadow;
+	}
+	.nav-item--active {
+		@apply font-bold tracking-wider text-ctp-mauve;
+	}
 }
 
 @tailwind utilities;
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
+	width: 8px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #222;
+	background: #222;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(203, 166, 247, 0.3);
-    border-radius: 5px;
+	background: rgb(203, 166, 247, 0.3);
+	border-radius: 5px;
 }
- 
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(203, 166, 247, 0.7);
+	background: rgb(203, 166, 247, 0.7);
 }
 
 *:focus {
-    outline: none !important;
+	outline: none !important;
 }

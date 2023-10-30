@@ -4,7 +4,8 @@ import MySiteLayout from "@layouts/MySiteLayout.astro";
 import Avatar from "@components/Avatar.astro";
 
 import { Icon } from "astro-icon";
-
+import { Image } from 'astro:assets';
+import myImage from "@assets/images/me.jpg";
 
 
 import testimonials from "../data/testimonials.json";
@@ -12,22 +13,27 @@ import testimonials from "../data/testimonials.json";
 import UserSubscriptionForm from "@components/UserSubscriptionForm.svelte";
 import BlogList from "@components/blogs/BlogList.astro";
 import Tags from "@components/Tags.astro";
+import { SITE_NAME } from "@lib/constants";
 ---
 
-<MySiteLayout>
-	<div class="">
+<MySiteLayout title={`Home - ${SITE_NAME}`}>
+	<div class="container text-center md:text-left">
 		<!-- <Stories /> -->
 		<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
 			<div
-				class="place-self-center md:order-last md:blur-0 w-1/2 md:w-full"
+				class="place-self-center md:place-self-auto md:order-last md:blur-0 w-1/2 md:w-full"
 			>
 				<img
-					src="https://pbs.twimg.com/profile_images/1374402396030267395/5i9jse_F_400x400.jpg"
+					src={myImage}
+					alt="Profile pic of Abhishek Saha"
+					loading="lazy"
+					decoding="async"
 					class="w-full aspect-square rounded-full md:rounded-md brightness-90 grayscale"
 				/>
+				<!-- <Image title="Abhishek Saha" src={myImage} alt="Abhishek Saha" class="w-full aspect-square rounded-full md:rounded-md brightness-90 grayscale"/> -->
 			</div>
 			<div class="space-y-8 antialiased">
-				<Avatar name="Abhi" color="pink-500" />
+				
 				<div class="text-4xl font-bold tracking-tight sm:text-5xl ">
 					<!--bg-clip-text bg-gradient-to-tr  from-green-600  to-indigo-800 -->
 
@@ -41,7 +47,7 @@ import Tags from "@components/Tags.astro";
 					Et, officiis in.
 				</p>
 				<div class="flex gap-4 items-center justify-center md:justify-normal">
-					<a class="group px-4 py-2 gap-2 inline-flex items-center text-center rounded-md hover:scale-105 hover:-translate-y-0.5 transition-all bg-indigo-600 hover:bg-indigo-500"
+					<a class="group px-4 py-2 gap-2 inline-flex items-center text-center rounded-md hover:scale-105 hover:-translate-y-0.5 transition-all bg-ctp-mauve/80 hover:bg-ctp-mauve/70"
 					download="" href="/sample_cv_not_complete.pdf"> 
 					<span class="inline-flex gap-1 shrink-0">
 						<span class="hidden md:block">Download </span>
@@ -76,7 +82,7 @@ import Tags from "@components/Tags.astro";
 				</h3>
 			</div>
 			
-			<BlogList limit={4} />
+			<BlogList />
 			<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 				<BlogListItem
 					title="Velit deserunt proident incididunt eiusmod."
@@ -185,11 +191,11 @@ import Tags from "@components/Tags.astro";
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</h3>
 					<div class="text-center mb-10">
-						<span class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-						<span class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-						<span class="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-						<span class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-						<span class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+						<span class="inline-block w-1 h-1 rounded-full bg-ctp-mauve ml-1"></span>
+						<span class="inline-block w-3 h-1 rounded-full bg-ctp-mauve ml-1"></span>
+						<span class="inline-block w-40 h-1 rounded-full bg-ctp-mauve"></span>
+						<span class="inline-block w-3 h-1 rounded-full bg-ctp-mauve ml-1"></span>
+						<span class="inline-block w-1 h-1 rounded-full bg-ctp-mauve ml-1"></span>
 					</div>
 				</div>
 				<div class="-mx-3 md:flex items-start">

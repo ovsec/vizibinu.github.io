@@ -1,10 +1,11 @@
 ---
+import { SITE_NAME } from "@lib/constants";
 import MySiteLayout from "../layouts/MySiteLayout.astro"
 import { Icon } from 'astro-icon'
 ---
 
 
-<MySiteLayout>
+<MySiteLayout title={`Contact - ${SITE_NAME}`}>
     <div class="place-self-center">
         
         <a target="_blank" rel="noreferrer" href="https://twitter.com/MrAbhisheksaha" class="inline-flex relative gap-2 items-center bg-[#222] rounded-md p-4 hover:bg-[#333] shadow-sm shadow-zinc-800">

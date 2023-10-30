@@ -1,6 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
-  
+
   "compilerOptions": {
     // Enable top-level await, and other modern ESM features.
     "target": "ESNext",
@@ -18,6 +18,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@lib/*": ["src/lib/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "allowSyntheticDefaultImports": true
   }

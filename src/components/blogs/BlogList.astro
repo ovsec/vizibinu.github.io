@@ -2,12 +2,11 @@
 
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import MySiteLayout from "../../layouts/MySiteLayout.astro"
 import BlogListItem from "./BlogListItem.svelte";
 
 
 interface Props {
-  blogs: CollectionEntry<'blogs'>[];
+  blogs?: CollectionEntry<'blogs'>[];
 }
 //export let blogEntries; // = await getCollection('blogs');
 const {blogs = await getCollection('blogs')}= Astro.props
@@ -19,7 +18,7 @@ const {blogs = await getCollection('blogs')}= Astro.props
     </div>
     <div class="grid grid-cols-1 @2xl/blogs:grid-cols-2   gap-3">
         {
-        blogs && blogs.map((blog, i) => {
+        blogs && blogs.map((blog) => {
             return <BlogListItem {blog}/>
         })
         
