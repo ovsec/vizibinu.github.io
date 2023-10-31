@@ -13,7 +13,7 @@ export let blog:CollectionEntry<'blogs'> ;
 const {slug, data : {title, publishDate, description, tags} = {}} = blog;
 </script>
 
-<article class="group relative flex flex-col items-start p-2">
+<article class="group relative flex flex-col items-start p-2 text-start">
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
         <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl">
         </div>
@@ -29,7 +29,7 @@ const {slug, data : {title, publishDate, description, tags} = {}} = blog;
     </time>
     {#if description}
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-1 md:line-clamp-2 ">
-        {description}
+        {description} Lorem id qui id adipisicing reprehenderit deserunt eiusmod aliqua nulla dolore amet ad non laborum. Esse do velit cupidatat in Lorem sunt incididunt. Aliquip nulla laborum non dolor anim eu duis.
     </p>
     {/if}
     {#if tags}
