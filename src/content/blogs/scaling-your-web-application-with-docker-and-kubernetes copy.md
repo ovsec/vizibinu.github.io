@@ -10,6 +10,7 @@ tags: ['webapp', 'docker', 'kubernetes']
 author: abhishek-saha
 relatedBlogs:
   - fullstack-dev-roadmap
+  - scaling-your-web-application-with-docker-and-kubernetes
 draft: false
 ---
 
@@ -18,19 +19,6 @@ draft: false
 In today's fast-paced digital landscape, the ability to efficiently scale web applications is crucial for ensuring optimal performance and handling increased traffic. Docker and Kubernetes have emerged as powerful tools for managing containerized applications and orchestrating their deployment at scale.
 
 ![Architecture Diagram](../../assets/blogs/scaling-your-web-application-with-docker-and-kubernetes/diagram1.svg) <!-- Insert an image URL showing the architecture diagram here -->
-
-## Table of Contents
-
-1. [What is Docker and Kubernetes?](#1-what-is-docker-and-kubernetes)
-2. [Benefits of Using Docker and Kubernetes for Scaling](#2-benefits-of-using-docker-and-kubernetes-for-scaling)
-3. [Setting Up Your Environment](#3-setting-up-your-environment)
-4. [Containerizing Your Web Application with Docker](#containerizing-your-web-application-with-docker)
-5. [Deploying Containers to Kubernetes](#deploying-containers-to-kubernetes)
-6. [Scaling Your Web Application](#scaling-your-web-application)
-7. [Monitoring and Auto-scaling](#monitoring-and-auto-scaling)
-8. [Ensuring High Availability](#ensuring-high-availability)
-9. [Security Considerations](#security-considerations)
-10. [Conclusion](#conclusion)
 
 ## 1. What is Docker and Kubernetes?
 

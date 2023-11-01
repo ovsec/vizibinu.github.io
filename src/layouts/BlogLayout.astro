@@ -4,20 +4,25 @@ import BlogList from "@components/blogs/BlogList.astro";
 import MySiteLayout from "@layouts/MySiteLayout.astro"
 
 const {title, description, keywords, author, relatedBlogs, date} = Astro.props;
+let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]" : ""
 ---
 
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
-    <div class="grid grid-cols-1 md:grid-cols-[auto_300px] gap-4">
+    <div class={`grid grid-cols-1 2xl:${bigscreen} gap-4 relative`}>
         <div>
             <slot name="header" />
-            <div class="prose  md:prose-md prose-zinc dark:prose-invert">
+            <div class="prose mx-auto  md:prose-md prose-zinc dark:prose-invert">
                 <slot />
             </div>
         </div>
-        <div class="my-10 md:my-0">
-            <h2 class="font-medium underline underline-offset-3">Related blogs</h2>
-            <BlogList blogs={relatedBlogs}  />
-        </div>
+        {relatedBlogs && relatedBlogs.length >0 && <div class="">
+            
+                <div class="relative my-10 2xl:my-0 ">
+                    <h2 class="font-medium  uppercase">Related blogs</h2>
+                    <BlogList blogs={relatedBlogs}  />
+                </div>
+            
+        </div>}
         
     </div>
 </MySiteLayout>

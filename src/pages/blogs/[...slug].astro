@@ -3,6 +3,13 @@ import { getCollection, getEntry } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { SITE_NAME } from '@lib/constants';
 import Avatar from '@components/Avatar.astro';
+
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime)
+
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blogs');
@@ -32,12 +39,19 @@ const author = entry.data.author ? await getEntry('authors', entry.data.author.i
   relatedBlogs={relatedBlogs}
 >
     <div>
-      <div class="flex flex-row items-center gap-2 my-2" slot="header">
-        <Avatar image={author?.data?.image} />
-        
+      <div slot="header">
         <div>
-          <div>{author?.data?.name}</div>
-          <time>12 Nov 2023</time>
+          <img src={entry.data.image.src} alt={entry.data.title} class="h-[150px] w-full">
+          <h1>{entry.data.title}</h1>
+          
+        </div>
+        <div class="flex flex-row items-center gap-2 my-2" >
+          <Avatar image={author?.data?.image} />
+          
+          <div>
+            <div>{author?.data?.name}</div>
+            <time>{dayjs(entry.data.publishDate).fromNow()}</time>
+          </div>
         </div>
       </div>
       

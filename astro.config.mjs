@@ -3,12 +3,17 @@ import tailwind from '@astrojs/tailwind';
 import svelte from '@astrojs/svelte';
 import partytown from '@astrojs/partytown';
 import mdx from '@astrojs/mdx';
+
+import markdownConfig from './markdown.config'
 //import vercelEdge from '@astrojs/vercel/edge';
 
 // https://astro.build/config
 export default defineConfig({
-
-  integrations: [mdx(), tailwind(), svelte(),
+  markdown: markdownConfig,
+  integrations: [mdx({
+    ...markdownConfig,
+    extendPlugins: false,
+  }), tailwind(), svelte(),
     partytown({
     // Adds dataLayer.push as a forwarding-event.
     config: {
