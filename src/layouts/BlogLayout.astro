@@ -11,7 +11,7 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]
     <div class={`grid grid-cols-1 2xl:${bigscreen} gap-4 relative`}>
         <div>
             <slot name="header" />
-            <div class="prose mx-auto  md:prose-md prose-zinc dark:prose-invert">
+            <div class="prose  mx-auto  md:prose-md prose-zinc dark:prose-invert">
                 <slot />
             </div>
         </div>
