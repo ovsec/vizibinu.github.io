@@ -34,7 +34,7 @@ const {slug, data : {title, publishDate, description, tags, image} = {}} = blog;
     </p>
     {/if}
     {#if tags}
-    <div class="flex gap-1">
+    <div class="flex gap-1 flex-wrap">
         {#each tags as tag, i}
             <a href={`/search?search=${tag}`} class=" px-2 py-1 items-center justify-center bg-zinc-600/30 text-xs rounded-full">{`#${tag}`}</a>
         

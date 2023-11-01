@@ -9,7 +9,7 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]
 
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
     <div class={`grid grid-cols-1 2xl:${bigscreen} gap-4 relative`}>
-        <div class="prose prose-sm sm:prose-base md:prose-lg 2xl:prose-xl prose-zinc  dark:prose-invert place-self-center">
+        <div class="prose prose-sm sm:prose-base md:prose 2xl:prose-lg prose-zinc  dark:prose-invert place-self-center">
             <slot name="header" />
             <div class="prose prose-h1:hidden dark:prose-invert ">
                 
@@ -18,7 +18,7 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]
         </div>
         {true && <div class="">
             
-                <div class="relative my-10 2xl:my-0 ">
+                <div class="relative my-10 2xl:my-0 space-y-4">
                     <h2 class="font-medium  uppercase">Related blogs</h2>
                     <BlogList blogs={relatedBlogs}  />
                 </div>
