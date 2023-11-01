@@ -3,7 +3,7 @@ import Icon from "astro-icon";
 import Logo from "./Logo.astro";
 
 ---
-<div class='py-5 text-white sm:py-8 z-40'>
+<div class='py-5 text-white sm:py-8 z-40 uppercase leading-5 tracking-wider'>
   <nav class='container  max-w-7xl mx-auto flex items-center justify-between px-6'>
     <a
       class='flex items-center text-lg font-medium text-white'
@@ -16,29 +16,29 @@ import Logo from "./Logo.astro";
     <!-- Desktop navigation items -->
     <ul class='hidden space-x-5 sm:flex sm:items-center '>
       <li>
-        <a href='/' class='text-gray-400 hover:text-white'>Home</a>
+        <a href='/' class='text-zinc-400 hover:text-white'>Home</a>
       </li>
       <li>
-        <a href='/about' class='text-gray-400 hover:text-white'
+        <a href='/contacts' class='text-zinc-400 hover:text-white'
           >About me</a
         >
       </li>
       <li>
-        <a href='/blogs' class='text-gray-400 hover:text-white'
+        <a href='/blogs' class='text-zinc-400 hover:text-white'
           >Blogs</a
         >
       </li>
       <li class='hidden lg:inline'>
-        <a href='/projects' class='text-gray-400 hover:text-white'>Projects</a
+        <a href='/projects' class='text-zinc-400 hover:text-white'>Projects</a
         >
       </li>
       
       <li>
         <kbd
           data-command-menu
-          class='hidden items-center rounded-md border border-gray-800 px-2.5 py-1 text-sm text-gray-400 hover:cursor-pointer hover:bg-gray-800 sm:flex'
+          class='hidden items-center rounded-md border border-zinc-800 px-2.5 py-1 text-sm text-zinc-400 hover:cursor-pointer hover:bg-zinc-800 sm:flex'
         >
-          <Icon icon='search' class='mr-2 h-3 w-3' />
+          <Icon name='ic:baseline-search' class='mr-2 h-3 w-3' />
           <kbd class='mr-1 font-sans'>⌘</kbd><kbd class='font-sans'>K</kbd>
         </kbd>
       </li>
@@ -47,7 +47,7 @@ import Logo from "./Logo.astro";
 
     <!-- Mobile Navigation Button -->
     <button
-      class='block cursor-pointer text-gray-400 hover:text-gray-50 sm:hidden'
+      class='block cursor-pointer text-zinc-400 hover:text-zinc-50 sm:hidden'
       aria-label='Menu'
       data-show-mobile-nav
       onclick="document.querySelector('[data-mobile-nav]')?.classList.remove('hidden');"
@@ -66,7 +66,7 @@ import Logo from "./Logo.astro";
     >
       <button
         data-close-mobile-nav
-        class='absolute right-6 top-6 block cursor-pointer text-gray-400 hover:text-gray-50'
+        class='absolute right-6 top-6 block cursor-pointer text-zinc-400 hover:text-zinc-50'
         aria-label='Close Menu'
         onclick="document.querySelector('[data-mobile-nav]')?.classList.add('hidden');"
       >
@@ -82,18 +82,19 @@ import Logo from "./Logo.astro";
           </a>
         </li>
         <li>
+            <a href='/blogs' class='text-xl hover:text-blue-300 md:text-lg'>
+              Blogs
+            </a>
+          </li>
+        <li>
           <a
-            href='/about'
+            href='/contacts'
             class='text-xl hover:text-blue-300 md:text-lg'
           >
             About me
           </a>
         </li>
-        <li>
-          <a href='/blogs' class='text-xl hover:text-blue-300 md:text-lg'>
-            Blogs
-          </a>
-        </li>
+        
         <li>
           <a href='/projects' class='text-xl hover:text-blue-300 md:text-lg'>
             Projects
