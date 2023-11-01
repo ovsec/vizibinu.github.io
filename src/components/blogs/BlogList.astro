@@ -13,10 +13,10 @@ const {blogs = await getCollection('blogs')}= Astro.props
 ---
 <div class="@container/blogs">
 
-    <div id="blog_filter" >
+    <div id="blog_filter"  >
         
     </div>
-    <div class="grid grid-cols-1 @2xl/blogs:grid-cols-2   gap-3">
+    <div class="grid grid-cols-1 @2xl/blogs:grid-cols-2   gap-8">
         {
         blogs && blogs.map((blog) => {
             return <BlogListItem {blog}/>

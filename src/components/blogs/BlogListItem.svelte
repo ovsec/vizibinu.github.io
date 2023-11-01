@@ -10,7 +10,7 @@ interface $$Props {
 }
 
 export let blog:CollectionEntry<'blogs'> ;
-const {slug, data : {title, publishDate, description, tags} = {}} = blog;
+const {slug, data : {title, publishDate, description, tags, image} = {}} = blog;
 </script>
 
 <article class="group relative flex flex-col items-start p-2 text-start">
@@ -27,6 +27,7 @@ const {slug, data : {title, publishDate, description, tags} = {}} = blog;
             <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
         </span>{dayjs(publishDate).fromNow()}
     </time>
+    {#if image} <img src={image?.src} alt="hi" class="w-full h-32 rounded-sm"> {/if}
     {#if description}
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-1 md:line-clamp-2 ">
         {description} Lorem id qui id adipisicing reprehenderit deserunt eiusmod aliqua nulla dolore amet ad non laborum. Esse do velit cupidatat in Lorem sunt incididunt. Aliquip nulla laborum non dolor anim eu duis.
@@ -35,12 +36,12 @@ const {slug, data : {title, publishDate, description, tags} = {}} = blog;
     {#if tags}
     <div class="flex gap-1">
         {#each tags as tag, i}
-            <a href={`/search?search=${tag}`} class=" px-2 py-1 items-center justify-center bg-teal-600 text-xs rounded-full">{`#${tag}`}</a>
+            <a href={`/search?search=${tag}`} class=" px-2 py-1 items-center justify-center bg-zinc-600/30 text-xs rounded-full">{`#${tag}`}</a>
         
         {/each}
     </div>
     {/if}
-    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500 group-hover:underline">
+    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500 group-hover:underline">
         Read article
         <svg
             viewBox="0 0 16 16"

@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -178,6 +188,20 @@ declare module 'astro:content' {
 "fullstack-dev-roadmap.md": {
 	id: "fullstack-dev-roadmap.md";
   slug: "fullstack-dev-roadmap";
+  body: string;
+  collection: "blogs";
+  data: InferEntrySchema<"blogs">
+} & { render(): Render[".md"] };
+"my-first-blog-with-mdx.mdx": {
+	id: "my-first-blog-with-mdx.mdx";
+  slug: "my-first-blog-with-mdx";
+  body: string;
+  collection: "blogs";
+  data: InferEntrySchema<"blogs">
+} & { render(): Render[".mdx"] };
+"scaling-your-web-application-with-docker-and-kubernetes copy.md": {
+	id: "scaling-your-web-application-with-docker-and-kubernetes copy.md";
+  slug: "scaling-your-web-application-with-docker-and-kubernetes-copy";
   body: string;
   collection: "blogs";
   data: InferEntrySchema<"blogs">

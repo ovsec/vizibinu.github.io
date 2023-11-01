@@ -11,7 +11,7 @@ const blogCollection = defineCollection({
 		image: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
 		description: z.string().optional(),
 		publishDate: z.date(),
-		// Reference a single author from the `authors` collection by `id`
+		
 		author: reference('authors'),
 		relatedBlogs: z.array(reference('blogs')).optional(),
 		draft: z.boolean().default(false),
@@ -24,6 +24,7 @@ const authors = defineCollection({
 		name: z.string(),
 		email: z.string().email(),
 		portfolio: z.string().url().optional(),
+		image: z.string().optional()
 	}),
 });
 

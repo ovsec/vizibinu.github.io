@@ -24,7 +24,7 @@
 		@apply bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-900 dark:text-zinc-50 dark:border-zinc-800;
 	}
 	.nav-item {
-		@apply relative block px-3 py-2 transition uppercase font-medium tracking-wider hover:text-zinc-100 text-zinc-50 drop-shadow;
+		@apply relative block px-3 py-2 transition uppercase font-medium tracking-wider hover:text-zinc-300 text-zinc-200 drop-shadow;
 	}
 	.nav-item--active {
 		@apply font-bold tracking-wider text-zinc-50 ;

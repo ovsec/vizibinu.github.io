@@ -11,40 +11,20 @@ const activeColor = "white"; //"green-600";
 ---
 <div class="block md:hidden p-4">
 	<Logo />
-
 </div>
-<div class="fixed bottom-0 z-40 md:relative  w-full container max-w-7xl mx-auto bg-[#111] md:bg-transparent ">
-	
-	<div class="relative flex items-center justify-between gap-4 p-4">
-		
 
+<div class="fixed bottom-0 z-40 md:relative  w-full container max-w-7xl mx-auto bg-[#111] md:bg-transparent ">	
+	<div class="relative flex items-center justify-between gap-4 p-4">
 		<div class="hidden md:block"><Logo/></div>
 		
 		<div class="flex grow md:grow-0 md:w-auto  items-center">
-		
-		
-		
+	
 		<div class="inline-flex gap-x-8 h-8 text-sm justify-between grow  transition-all  ">
-			
 			<NavItem  text="Home" path="/" isActive={pathname === "/"} /> 
 			<NavItem  text="Blogs" path="/blogs" isActive={pathname.indexOf("/blogs") != -1} />
 			<NavItem  text="Projects" path="/projects" isActive={pathname === "/projects"} />
 			<NavItem icon="ic:baseline-search"  path="/search" isActive={pathname === "/search"} />
-			
-			<a href="/" class="nav-item hidden md:inline-flex">
-				<Icon class="h-6" name="carbon:overflow-menu-vertical" />
-			</a>
-			<!-- <div class="relative group">
-				<div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-zinc-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-				<button class=" hover:saturate-200 drop-shadow-2xl -inset-0.5 shadow-2xl shadow-white hidden md:inline-flex" >{true ? "🌙" : "🌞"}</button> 
-			</div>
-			 
-			<ThemeSwitch />
-			-->
 		</div>
-		
-		
-		
 		</div>
 	</div>
 </div>

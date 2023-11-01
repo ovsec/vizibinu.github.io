@@ -1,35 +1,21 @@
 ---
-import BlogList from "../components/blogs/BlogList.astro";
-import MySiteLayout from "./MySiteLayout.astro"
-//
+import Avatar from "@components/Avatar.astro";
+import BlogList from "@components/blogs/BlogList.astro";
+import MySiteLayout from "@layouts/MySiteLayout.astro"
 
 const {title, description, keywords, author, relatedBlogs, date} = Astro.props;
-
 ---
 
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
     <div class="grid grid-cols-1 md:grid-cols-[auto_300px] gap-4">
-        <div class="prose  md:prose-md prose-zinc dark:prose-invert">
-        
-            <!-- <div class="mb-2">
-                <time class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-            datetime={frontmatter.publishedDate}>
-                <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                    <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                </span>
-                {frontmatter.publishDate}
-                </time>
-                <div class="flex gap-1 ">
-                    {frontmatter.tags?.map((tag)=>{
-                        return <a href={`/search/tags/${tag}`}  class="no-underline px-2 py-1 items-center justify-center bg-teal-600 text-xs rounded-full">{`#${tag}`}</a>
-                    })}
-                </div>
-            </div> -->
-            <slot />
+        <div>
+            <slot name="header" />
+            <div class="prose  md:prose-md prose-zinc dark:prose-invert">
+                <slot />
+            </div>
         </div>
-        
-        <div class="py-6">
-            <h2>Related blogs</h2>
+        <div class="my-10 md:my-0">
+            <h2 class="font-medium underline underline-offset-3">Related blogs</h2>
             <BlogList blogs={relatedBlogs}  />
         </div>
         
