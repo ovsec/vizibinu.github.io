@@ -185,6 +185,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blogs": {
+"a-test-blog.mdx": {
+	id: "a-test-blog.mdx";
+  slug: "a-test-blog";
+  body: string;
+  collection: "blogs";
+  data: InferEntrySchema<"blogs">
+} & { render(): Render[".mdx"] };
 "fullstack-dev-roadmap.md": {
 	id: "fullstack-dev-roadmap.md";
   slug: "fullstack-dev-roadmap";
@@ -199,13 +206,6 @@ declare module 'astro:content' {
   collection: "blogs";
   data: InferEntrySchema<"blogs">
 } & { render(): Render[".mdx"] };
-"scaling-your-web-application-with-docker-and-kubernetes copy.md": {
-	id: "scaling-your-web-application-with-docker-and-kubernetes copy.md";
-  slug: "scaling-your-web-application-with-docker-and-kubernetes-copy";
-  body: string;
-  collection: "blogs";
-  data: InferEntrySchema<"blogs">
-} & { render(): Render[".md"] };
 "scaling-your-web-application-with-docker-and-kubernetes.md": {
 	id: "scaling-your-web-application-with-docker-and-kubernetes.md";
   slug: "scaling-your-web-application-with-docker-and-kubernetes";

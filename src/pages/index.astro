@@ -13,6 +13,8 @@ import UserSubscriptionForm from "@components/UserSubscriptionForm.svelte";
 import BlogList from "@components/blogs/BlogList.astro";
 import Tags from "@components/Tags.astro";
 import { SITE_NAME } from "@lib/constants";
+import Testimonials from "@components/Testimonials.astro";
+import SectionHR from "@components/SectionHR.astro";
 ---
 
 <MySiteLayout title={`Home - ${SITE_NAME}`}>
@@ -79,6 +81,7 @@ import { SITE_NAME } from "@lib/constants";
 				<h3 class="text-xl mb-10 font-light">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</h3>
+				<SectionHR/>
 			</div>
 			
 			<BlogList />
@@ -110,6 +113,7 @@ import { SITE_NAME } from "@lib/constants";
 				<h3 class="text-xl mb-10 font-light">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</h3>
+				<SectionHR/>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 				<div class="place-self-center">
@@ -180,64 +184,12 @@ import { SITE_NAME } from "@lib/constants";
 		
 		<section>
 			<div class="w-full max-w-5xl mx-auto">
-				<div class="text-center max-w-xl mx-auto">
-					<h1
-						class="text-4xl md:text-4xl font-bold mb-5 text-neutral-600"
-					>
-						What people <br />are saying.
-					</h1>
-					<h3 class="text-xl mb-5 font-light">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</h3>
-					<div class="text-center mb-10">
-						<span class="inline-block w-1 h-1 rounded-full bg-ctp-mauve ml-1"></span>
-						<span class="inline-block w-3 h-1 rounded-full bg-ctp-mauve ml-1"></span>
-						<span class="inline-block w-40 h-1 rounded-full bg-ctp-mauve"></span>
-						<span class="inline-block w-3 h-1 rounded-full bg-ctp-mauve ml-1"></span>
-						<span class="inline-block w-1 h-1 rounded-full bg-ctp-mauve ml-1"></span>
-					</div>
-				</div>
-				<div class="-mx-3 md:flex items-start">
-					{
-						[0, 1, 2].map((index) => (
-							<div class="px-3 md:w-1/3">
-								{testimonials?.map((item, i) => {
-									if ((i + index) % 3 == 0)
-										return (
-											<div class="w-full mx-auto rounded-lg testimonial border  p-5 font-light mb-6 text-left">
-												<div class="w-full flex mb-4 items-center">
-													<div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-														<img
-															src={item.image}
-															alt=""
-														/>
-													</div>
-													<div class="flex-grow pl-3">
-														<h6 class="font-bold text-sm uppercase ">
-															{item.username}
-														</h6>
-													</div>
-												</div>
-												<div class="w-full">
-													<p class="text-sm leading-tight">
-														<span class="text-lg leading-none italic font-bold  mr-1">
-															"
-														</span>
-														{item.content}
-														<span class="text-lg leading-none italic font-bold text-gray-400 ml-1">
-															"
-														</span>
-													</p>
-												</div>
-											</div>
-										);
-								})}
-							</div>
-						))
-					}
-				</div>
+				
+					<Testimonials />
+				
 			</div>
 		</section>
+		
 	</div>
 </MySiteLayout>
 

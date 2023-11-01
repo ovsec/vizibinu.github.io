@@ -1,0 +1,109 @@
+---
+import Icon from "astro-icon";
+import Logo from "./Logo.astro";
+
+---
+<div class='py-5 text-white sm:py-8 z-40'>
+  <nav class='container  max-w-7xl mx-auto flex items-center justify-between px-6'>
+    <a
+      class='flex items-center text-lg font-medium text-white'
+      href='/'
+      aria-label='abhisheksaha.xyz'
+    >
+      <Logo/>
+    </a>
+
+    <!-- Desktop navigation items -->
+    <ul class='hidden space-x-5 sm:flex sm:items-center '>
+      <li>
+        <a href='/' class='text-gray-400 hover:text-white'>Home</a>
+      </li>
+      <li>
+        <a href='/about' class='text-gray-400 hover:text-white'
+          >About me</a
+        >
+      </li>
+      <li>
+        <a href='/blogs' class='text-gray-400 hover:text-white'
+          >Blogs</a
+        >
+      </li>
+      <li class='hidden lg:inline'>
+        <a href='/projects' class='text-gray-400 hover:text-white'>Projects</a
+        >
+      </li>
+      
+      <li>
+        <kbd
+          data-command-menu
+          class='hidden items-center rounded-md border border-gray-800 px-2.5 py-1 text-sm text-gray-400 hover:cursor-pointer hover:bg-gray-800 sm:flex'
+        >
+          <Icon icon='search' class='mr-2 h-3 w-3' />
+          <kbd class='mr-1 font-sans'>⌘</kbd><kbd class='font-sans'>K</kbd>
+        </kbd>
+      </li>
+    </ul>
+    
+
+    <!-- Mobile Navigation Button -->
+    <button
+      class='block cursor-pointer text-gray-400 hover:text-gray-50 sm:hidden'
+      aria-label='Menu'
+      data-show-mobile-nav
+      onclick="document.querySelector('[data-mobile-nav]')?.classList.remove('hidden');"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+      </svg>
+      
+    </button>
+
+    <!-- Mobile Navigation Items -->
+    <div
+      class='fixed bottom-0 left-0 right-0 top-0 z-40 flex hidden items-center bg-slate-900'
+      data-mobile-nav
+      
+    >
+      <button
+        data-close-mobile-nav
+        class='absolute right-6 top-6 block cursor-pointer text-gray-400 hover:text-gray-50'
+        aria-label='Close Menu'
+        onclick="document.querySelector('[data-mobile-nav]')?.classList.add('hidden');"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      
+      </button>
+      <ul class='flex w-full flex-col items-center gap-2 md:gap-3'>
+        <li>
+          <a href='/' class='text-xl hover:text-blue-300 md:text-lg'>
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href='/about'
+            class='text-xl hover:text-blue-300 md:text-lg'
+          >
+            About me
+          </a>
+        </li>
+        <li>
+          <a href='/blogs' class='text-xl hover:text-blue-300 md:text-lg'>
+            Blogs
+          </a>
+        </li>
+        <li>
+          <a href='/projects' class='text-xl hover:text-blue-300 md:text-lg'>
+            Projects
+          </a>
+        </li>
+
+        <!-- Links for logged in users -->
+        
+        
+      </ul>
+    </div>
+  </nav>
+</div>

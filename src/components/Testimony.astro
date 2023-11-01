@@ -1,0 +1,14 @@
+---
+import Avatar from "./Avatar.astro";
+const  {username, image, content} = Astro.props;
+---
+
+<article class="bg-zinc-900 rounded-lg mb-4 p-4 w-full break-inside-avoid">
+    <p >{content}</p>
+    <div class="inline-flex items-center gap-2 mt-2">
+        <Avatar image={image} />
+        {username}
+    </div>
+    
+    
+</article>

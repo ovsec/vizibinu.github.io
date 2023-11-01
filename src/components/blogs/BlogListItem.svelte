@@ -13,7 +13,7 @@ export let blog:CollectionEntry<'blogs'> ;
 const {slug, data : {title, publishDate, description, tags, image} = {}} = blog;
 </script>
 
-<article class="group relative flex flex-col items-start p-2 text-start">
+<article class="group relative flex flex-col items-start p-2 text-start break-inside-avoid mb-8 bg-zinc-950 hover:bg-zinc-900 rounded-md transition-colors">
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
         <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl">
         </div>
