@@ -9,13 +9,13 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]
 
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
     <div class={`grid grid-cols-1 2xl:${bigscreen} gap-4 relative`}>
-        <div class="block prose mx-auto min-w-full md:min-w-[65ch]  prose-zinc dark:prose-invert">
+        <div class="prose prose-zinc min-w-full md:min-w-[65ch] dark:prose-invert place-self-center">
             <slot name="header" />
-            <div class="prose-h1:hidden">
+            <div class="prose prose-h1:hidden dark:prose-invert ">
                 <slot  />
             </div>
         </div>
-        {relatedBlogs && relatedBlogs.length >0 && <div class="">
+        {true && <div class="">
             
                 <div class="relative my-10 2xl:my-0 ">
                     <h2 class="font-medium  uppercase">Related blogs</h2>
