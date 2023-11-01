@@ -38,8 +38,8 @@ const author = entry.data.author ? await getEntry('authors', entry.data.author.i
   author={entry.data?.author} 
   relatedBlogs={relatedBlogs}
 >
-    <div>
-      <div slot="header">
+    
+      <div class="mx-auto" slot="header">
         <div>
           <img src={entry.data.image.src} alt={entry.data.title} class="h-[150px] w-full">
           <h1>{entry.data.title}</h1>
@@ -55,6 +55,7 @@ const author = entry.data.author ? await getEntry('authors', entry.data.author.i
         </div>
       </div>
       
-    
-    <Content />
+    <div>
+      <Content />
+    </div>
 </BlogLayout>
