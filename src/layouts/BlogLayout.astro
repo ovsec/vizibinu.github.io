@@ -9,7 +9,7 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "grid-cols-[auto_300px]
 
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
     <div class={`grid grid-cols-1 2xl:${bigscreen} gap-4 relative`}>
-        <div class="prose prose-sm sm:prose-base md:prose 2xl:prose-lg prose-zinc  dark:prose-invert place-self-center">
+        <div class="prose prose-base  sm:prose-sm md:prose 2xl:prose-lg prose-zinc  dark:prose-invert place-self-center">
             <slot name="header" />
             <div class="prose prose-h1:hidden dark:prose-invert ">
                 
