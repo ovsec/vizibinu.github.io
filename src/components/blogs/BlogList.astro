@@ -16,9 +16,10 @@ const {blogs = await getCollection('blogs')}= Astro.props
     <div id="blog_filter"  >
         
     </div>
-    <div class="columns-1 @xl/blogs:columns-2  @2xl/blogs:columns-3  gap-8">
+    <div class="columns-1 @xl/blogs:columns-2  @2xl/blogs:columns-2  gap-8">
         {
         blogs && blogs.map((blog) => {
+            
             return <BlogListItem {blog}/>
         })
         

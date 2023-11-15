@@ -13,8 +13,10 @@ export default defineConfig({
   integrations: [mdx({
     ...markdownConfig,
     extendPlugins: false,
-  }), tailwind(), svelte(),
-    partytown({
+  }), 
+  tailwind(), 
+  svelte(),
+  partytown({
     // Adds dataLayer.push as a forwarding-event.
     config: {
       forward: ['dataLayer.push']

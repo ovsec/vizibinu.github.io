@@ -21,6 +21,12 @@
       "@assets/*": ["src/assets/*"]
     },
     "allowSyntheticDefaultImports": true,
-    "allowJs": true
-  }
+    "allowJs": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    ".eslintrc.js",
+    "src",
+    "*.{mjs,ts,js}"
+  ]
 }

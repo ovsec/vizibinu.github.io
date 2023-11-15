@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
 const relatedBlogs = await getCollection('blogs',(e) => {
   
   let listOfslugs = entry.data?.relatedBlogs?.map((e: { slug: string; }) => e.slug)
@@ -41,6 +41,7 @@ const author = entry.data.author ? await getEntry('authors', entry.data.author.i
     
       <div class="mx-auto" slot="header">
         <div>
+          <p>{remarkPluginFrontmatter.minutesRead}</p>
           {entry.data.image ? <img src={entry.data.image.src} alt={entry.data.title} class="h-[150px] w-full" />: null}
           <h1>{entry.data.title}</h1>
           
