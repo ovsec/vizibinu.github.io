@@ -10,7 +10,8 @@
     "lint:eslint": "eslint .",
     "format:code": "prettier -w . --cache --plugin-search-dir=.",
     "check": "astro check",
-    "new-blog": "node scripts/add-new-blog.mjs"
+    "new-blog": "node scripts/add-new-blog.mjs",
+    "surge" : "astro build && cd dist && surge --project . --domain highfalutin-step.surge.sh"
   },
   "devDependencies": {
     "@astrojs/mdx": "^1.1.3",

@@ -36,7 +36,7 @@ const {slug, data : {title, publishDate, description, tags, image} = {}} = blog;
             <!-- TODO: Add minutes to read -->
         </span>
     </time>
-    {#if image} <img src={image?.src} alt="hi" class="order-first hidden  @sm/blogs:block w-full h-32 rounded-sm"> {/if}
+    {#if image} <img src={image?.src} alt="hi" class="order-first   @sm/blogs:block w-full h-32 rounded-sm"> {/if}
     {#if description}
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-1 md:line-clamp-2 ">
         {description} 
