@@ -10,7 +10,7 @@ let bigscreen = relatedBlogs && relatedBlogs.length >0 ? "2xl:grid-cols-[auto_30
 <MySiteLayout title={title} keywords={keywords} description={description} author={author}>
     <div class={`grid grid-cols-1 ${bigscreen} gap-8 relative`}>
             
-            <div class="mx-auto w-full prose md:prose-lg lg:prose-xl  dark:prose-invert dark:prose-headings:text-slate-300  prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+            <div class="mx-auto w-full prose-sm md:prose lg:prose-lg  dark:prose-invert dark:prose-headings:text-slate-300  prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-2"
             >
                 <slot name="header" />
                 <div class="prose-h1:hidden">

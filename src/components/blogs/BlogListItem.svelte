@@ -50,7 +50,7 @@ const {slug, data : {title, publishDate, description, tags, image} = {}} = blog;
         {/each}
     </div>
     {/if}
-    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500 group-hover:underline">
+    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-600 dark:prose-a:text-blue-400 group-hover:underline">
         Read article
         <svg
             viewBox="0 0 16 16"
