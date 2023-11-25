@@ -3,9 +3,9 @@ title: 'Why we choose one over another'
 description: 'Why we choose one over another'
 publishDate: 2023-11-25 09:44:16
 image:
-  src: 'https://kubernetes.io/_common-resources/images/flower.svg'
+  src: 'https://www.worldhistory.org/img/c/p/1200x900/906.jpg'
   alt: 'Space shuttle leaving curved trail in the sky. '
-tags: ['webapp', 'docker', 'kubernetes']
+tags: ['philosophy', 'docker', 'kubernetes']
 author: abhishek-saha
 relatedBlogs:
   - fullstack-dev-roadmap
@@ -16,5 +16,5 @@ Why we choose one over another
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYxMzQ5NDM3XX0=
+eyJoaXN0b3J5IjpbLTExNjc1ODc5NDFdfQ==
 -->
